@@ -15,7 +15,7 @@ class JinglesController < ApplicationController
 
   # GET /jingles/new
   def new
-    @jingle = Jingle.new
+    @jingle = current_user.jingles.build
   end
 
   # GET /jingles/1/edit
@@ -26,29 +26,20 @@ class JinglesController < ApplicationController
   # POST /jingles.json
   def create
     @jingle = current_user.jingles.build(jingle_params)
-
-    respond_to do |format|
-      if @jingle.save
-        format.html { redirect_to @jingle, notice: 'Jingle was successfully created.' }
-        format.json { render :show, status: :created, location: @jingle }
-      else
-        format.html { render :new }
-        format.json { render json: @jingle.errors, status: :unprocessable_entity }
-      end
+    if @jingle.save
+      redirect_to @jingle, notice: 'Jingle was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /jingles/1
   # PATCH/PUT /jingles/1.json
   def update
-    respond_to do |format|
-      if @jingle.update(jingle_params)
-        format.html { redirect_to @jingle, notice: 'Jingle was successfully updated.' }
-        format.json { render :show, status: :ok, location: @jingle }
-      else
-        format.html { render :edit }
-        format.json { render json: @jingle.errors, status: :unprocessable_entity }
-      end
+    if @jingle.update(jingle_params)
+      redirect_to @jingle, notice: 'Jingle was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -56,20 +47,18 @@ class JinglesController < ApplicationController
   # DELETE /jingles/1.json
   def destroy
     @jingle.destroy
-    respond_to do |format|
-      format.html { redirect_to jingles_url, notice: 'Jingle was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to jingles_url, notice: 'Jingle was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_jingle
-      @jingle = Jingle.friendly.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def jingle_params
-      params.require(:jingle).permit(:title, :audio)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_jingle
+    @jingle = current_user.jingles.friendly.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def jingle_params
+    params.require(:jingle).permit(:title, :audio)
+  end
 end

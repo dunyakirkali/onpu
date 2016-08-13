@@ -1,1 +1,0 @@
-json.array! @jingles, partial: 'jingles/jingle', as: :jingle
