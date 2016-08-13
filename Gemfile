@@ -34,3 +34,7 @@ group :test do
   gem 'brakeman'
   gem 'coveralls', require: false
 end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-dropzone'
+end
