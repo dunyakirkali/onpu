@@ -21,6 +21,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '~>4.2.0'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 gem 'foreman'
+gem 'devise', '~> 4.2.0'
 
 group :development, :test do
   gem 'bundler-audit'
