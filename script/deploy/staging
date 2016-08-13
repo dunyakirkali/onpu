@@ -1,0 +1,13 @@
+#!/bin/bash
+set -x
+set -e
+
+export RAILS_ENV='production'
+export RACK_ENV='production'
+
+[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow
+git push git@heroku.com:onpu-staging.git develop:master
+heroku run rake db:migrate --app onpu-staging
+heroku run rake db:seed --app onpu-staging
+# heroku run rake sitemap:refresh --app ahtung-staging
+# bundle exec rake smoke:production
