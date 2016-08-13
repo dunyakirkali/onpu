@@ -4,7 +4,7 @@ machine:
 test:
   override:
     - bundle exec rake security
-    - bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml
+    - bundle exec rspec -f documentation
     - bundle exec danger
     - bundle exec bundle-audit check --update
 deployment:
