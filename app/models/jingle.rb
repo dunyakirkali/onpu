@@ -1,0 +1,2 @@
+class Jingle < ApplicationRecord
+end
