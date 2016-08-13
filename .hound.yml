@@ -1,0 +1,5 @@
+fail_on_violations: false
+ruby:
+  config_file: .rubocop.yml
+scss:
+  config_file: .scss-lint.yml
