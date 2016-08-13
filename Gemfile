@@ -17,6 +17,7 @@ gem 'semantic-ui-sass', '~> 2.2.2.2'
 gem 'slim-rails', '~> 3.1.0'
 gem 'paperclip', '~> 5.0.0'
 gem 'friendly_id', '~> 5.1.0'
+gem 'rollbar'
 
 group :development, :test do
   gem 'bundler-audit'
