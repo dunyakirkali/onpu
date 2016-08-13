@@ -1,10 +1,11 @@
 h1 Listing jingles
 
-table
+table.ui.celled.table
   thead
     tr
       th Title
       th User
+      th File
       th
       th
       th
@@ -14,10 +15,11 @@ table
       tr
         td = jingle.title
         td = jingle.user_id
+        td = audio_tag(jingle.audio.url, controls: true)
         td = link_to 'Show', jingle
         td = link_to 'Edit', edit_jingle_path(jingle)
         td = link_to 'Destroy', jingle, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
-= link_to 'New Jingle', new_jingle_path
+= link_to 'New Jingle', new_jingle_path, class: 'ui button'
