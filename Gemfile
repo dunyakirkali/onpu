@@ -15,6 +15,7 @@ gem 'sidekiq', '~> 4.1.2'
 gem 'pundit', '~> 1.1.0'
 gem 'semantic-ui-sass'
 gem 'slim-rails', '~> 3.1.0'
+gem 'devise', '~> 4.2.0'
 
 group :development, :test do
   gem 'bundler-audit'
