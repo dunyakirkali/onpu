@@ -5,7 +5,7 @@ class JinglesController < ApplicationController
   # GET /jingles
   # GET /jingles.json
   def index
-    @jingles = Jingle.all
+    @jingles = current_user.jingles
   end
 
   # GET /jingles/1
@@ -25,7 +25,7 @@ class JinglesController < ApplicationController
   # POST /jingles
   # POST /jingles.json
   def create
-    @jingle = current_user.build(jingle_params)
+    @jingle = current_user.jingles.build(jingle_params)
 
     respond_to do |format|
       if @jingle.save
