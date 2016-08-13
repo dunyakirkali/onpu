@@ -18,6 +18,9 @@ gem 'slim-rails', '~> 3.1.0'
 gem 'devise', '~> 4.2.0'
 gem 'paperclip', '~> 5.0.0'
 gem 'friendly_id', '~> 5.1.0'
+gem 'devise', '~>4.2.0'
+gem 'omniauth-google-oauth2', '~> 0.4.1'
+gem 'foreman'
 
 group :development, :test do
   gem 'bundler-audit'
