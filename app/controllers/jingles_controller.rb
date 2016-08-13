@@ -1,5 +1,6 @@
 class JinglesController < ApplicationController
   before_action :set_jingle, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /jingles
   # GET /jingles.json
