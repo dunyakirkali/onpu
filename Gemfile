@@ -22,6 +22,7 @@ gem 'friendly_id', '~> 5.1.0'
 group :development, :test do
   gem 'bundler-audit'
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails', '~> 4.7.0'
 end
 
 group :development do
