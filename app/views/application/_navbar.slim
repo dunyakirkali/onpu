@@ -1,10 +1,8 @@
 .ui.fixed.inverted.menu
   .ui.container
-    = link_to '#', class: "header item" do
+    = link_to root_path, class: "header item" do
       img class="logo" src="assets/images/logo.png"
       | Onpu
-    
-    = link_to 'Home', root_path, class: 'item'
     .ui.simple.dropdown.item
       | Dropdown
       i.dropdown.icon
