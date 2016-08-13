@@ -1,0 +1,18 @@
+machine:
+  pre:
+    - sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+test:
+  override:
+    - bundle exec rake security
+    - bundle exec rspec -f documentation
+    - bundle exec danger
+    - bundle exec bundle-audit check --update
+deployment:
+  staging:
+    branch: develop
+    commands:
+      - ./script/deploy/staging
+  production:
+    branch: master
+    commands:
+      - ./script/deploy/production
