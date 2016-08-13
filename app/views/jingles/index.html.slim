@@ -14,7 +14,7 @@ table.ui.celled.table
     - @jingles.each do |jingle|
       tr
         td = jingle.title
-        td = jingle.user_id
+        td = jingle.user.email
         td = audio_tag(jingle.audio.url, controls: true)
         td = link_to 'Show', jingle
         td = link_to 'Edit', edit_jingle_path(jingle)
