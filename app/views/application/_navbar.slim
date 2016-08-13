@@ -3,6 +3,8 @@
     = link_to root_path, class: "header item" do
       img class="logo" src="assets/images/logo.png"
       | Onpu
+    = link_to 'Logout', destroy_user_session_path, class: "header item", method: :delete if user_signed_in?
+
     .ui.simple.dropdown.item
       | Dropdown
       i.dropdown.icon
