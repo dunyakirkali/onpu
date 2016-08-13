@@ -1,0 +1,15 @@
+= form_for @jingle do |f|
+  - if @jingle.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@jingle.errors.count, "error")} prohibited this jingle from being saved:"
+      ul
+        - @jingle.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .actions = f.submit class: 'ui button'

@@ -1,0 +1,23 @@
+h1 Listing jingles
+
+table
+  thead
+    tr
+      th Title
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @jingles.each do |jingle|
+      tr
+        td = jingle.title
+        td = jingle.user_id
+        td = link_to 'Show', jingle
+        td = link_to 'Edit', edit_jingle_path(jingle)
+        td = link_to 'Destroy', jingle, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Jingle', new_jingle_path
