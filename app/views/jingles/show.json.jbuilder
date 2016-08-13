@@ -1,0 +1,1 @@
+json.partial! "jingles/jingle", jingle: @jingle
