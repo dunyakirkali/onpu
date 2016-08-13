@@ -41,4 +41,5 @@ end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-dropzone'
+  gem 'rails-assets-howler'
 end
