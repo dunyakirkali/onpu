@@ -1,0 +1,25 @@
+h1 Listing jingles
+
+table.ui.celled.table
+  thead
+    tr
+      th Title
+      th User
+      th File
+      th
+      th
+      th
+
+  tbody
+    - @jingles.each do |jingle|
+      tr
+        td = jingle.title
+        td = jingle.user.email
+        td = audio_tag(jingle.audio.url, controls: true)
+        td = link_to 'Show', [:users, jingle]
+        td = link_to 'Edit', edit_users_jingle_path(jingle)
+        td = link_to 'Destroy', [:users, jingle], data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Jingle', new_users_jingle_path, class: 'ui button'
