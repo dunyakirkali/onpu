@@ -13,10 +13,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'rack-attack', '~> 5.0.1'
 gem 'sidekiq', '~> 4.1.2'
 gem 'pundit', '~> 1.1.0'
+gem 'semantic-ui-sass'
+gem 'slim-rails', '~> 3.1.0'
 
 group :development, :test do
   gem 'bundler-audit'
-  gem 'danger'
   gem 'rspec-rails', '~> 3.0'
 end
 
@@ -32,4 +33,3 @@ group :test do
   gem 'brakeman'
   gem 'coveralls', require: false
 end
-
