@@ -1,38 +1,38 @@
 require "rails_helper"
 
-RSpec.describe JinglesController, type: :routing do
+RSpec.describe Users::JinglesController, type: :routing do
   describe "routing" do
 
     it "routes to #index" do
-      expect(:get => "/jingles").to route_to("jingles#index")
+      expect(:get => "/users/jingles").to route_to("users/jingles#index")
     end
 
     it "routes to #new" do
-      expect(:get => "/jingles/new").to route_to("jingles#new")
+      expect(:get => "/users/jingles/new").to route_to("users/jingles#new")
     end
 
     it "routes to #show" do
-      expect(:get => "/jingles/1").to route_to("jingles#show", :id => "1")
+      expect(:get => "/users/jingles/1").to route_to("users/jingles#show", :id => "1")
     end
 
     it "routes to #edit" do
-      expect(:get => "/jingles/1/edit").to route_to("jingles#edit", :id => "1")
+      expect(:get => "/users/jingles/1/edit").to route_to("users/jingles#edit", :id => "1")
     end
 
     it "routes to #create" do
-      expect(:post => "/jingles").to route_to("jingles#create")
+      expect(:post => "/users/jingles").to route_to("users/jingles#create")
     end
 
     it "routes to #update via PUT" do
-      expect(:put => "/jingles/1").to route_to("jingles#update", :id => "1")
+      expect(:put => "/users/jingles/1").to route_to("users/jingles#update", :id => "1")
     end
 
     it "routes to #update via PATCH" do
-      expect(:patch => "/jingles/1").to route_to("jingles#update", :id => "1")
+      expect(:patch => "/users/jingles/1").to route_to("users/jingles#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/jingles/1").to route_to("jingles#destroy", :id => "1")
+      expect(:delete => "/users/jingles/1").to route_to("users/jingles#destroy", :id => "1")
     end
 
   end

@@ -1,4 +1,4 @@
-class JinglesController < ApplicationController
+class Users::JinglesController < ApplicationController
   before_action :set_jingle, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
@@ -27,7 +27,7 @@ class JinglesController < ApplicationController
   def create
     @jingle = current_user.jingles.build(jingle_params)
     if @jingle.save
-      redirect_to @jingle, notice: 'Jingle was successfully created.'
+      redirect_to users_jingle_path(@jingle), notice: 'Jingle was successfully created.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class JinglesController < ApplicationController
   # PATCH/PUT /jingles/1.json
   def update
     if @jingle.update(jingle_params)
-      redirect_to @jingle, notice: 'Jingle was successfully updated.'
+      redirect_to users_jingle_path(@jingle), notice: 'Jingle was successfully updated.'
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class JinglesController < ApplicationController
   # DELETE /jingles/1.json
   def destroy
     @jingle.destroy
-    redirect_to jingles_url, notice: 'Jingle was successfully destroyed.'
+    redirect_to users_jingles_path, notice: 'Jingle was successfully destroyed.'
   end
 
   private

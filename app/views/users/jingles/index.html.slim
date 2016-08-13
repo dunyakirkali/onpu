@@ -16,10 +16,10 @@ table.ui.celled.table
         td = jingle.title
         td = jingle.user.email
         td = audio_tag(jingle.audio.url, controls: true)
-        td = link_to 'Show', jingle
-        td = link_to 'Edit', edit_jingle_path(jingle)
-        td = link_to 'Destroy', jingle, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Show', [:users, jingle]
+        td = link_to 'Edit', edit_users_jingle_path(jingle)
+        td = link_to 'Destroy', [:users, jingle], data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
-= link_to 'New Jingle', new_jingle_path, class: 'ui button'
+= link_to 'New Jingle', new_users_jingle_path, class: 'ui button'
