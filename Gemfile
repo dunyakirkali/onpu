@@ -26,6 +26,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'binding_of_caller'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
