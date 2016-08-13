@@ -301,7 +301,7 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-assets-dropzone!
   rails-assets-howler!
-  rollbar
+  rollbar (~> 2.12.0)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   semantic-ui-sass (~> 2.2.2.2)
