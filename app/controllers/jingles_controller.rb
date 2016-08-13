@@ -25,7 +25,7 @@ class JinglesController < ApplicationController
   # POST /jingles
   # POST /jingles.json
   def create
-    @jingle = Jingle.new(jingle_params)
+    @jingle = current_user.build(jingle_params)
 
     respond_to do |format|
       if @jingle.save
@@ -70,6 +70,6 @@ class JinglesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jingle_params
-      params.require(:jingle).permit(:title, :user_id, :audio)
+      params.require(:jingle).permit(:title, :audio)
     end
 end
