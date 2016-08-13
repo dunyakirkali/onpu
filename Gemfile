@@ -32,3 +32,4 @@ group :test do
   gem 'brakeman'
   gem 'coveralls', require: false
 end
+
