@@ -13,8 +13,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'rack-attack', '~> 5.0.1'
 gem 'sidekiq', '~> 4.1.2'
 gem 'pundit', '~> 1.1.0'
-gem 'semantic-ui-sass'
+gem 'semantic-ui-sass', '~> 2.2.2.2'
 gem 'slim-rails', '~> 3.1.0'
+gem 'paperclip', '~> 5.0.0'
 
 group :development, :test do
   gem 'bundler-audit'
