@@ -16,7 +16,6 @@ gem 'pundit', '~> 1.1.0'
 
 group :development, :test do
   gem 'bundler-audit'
-  gem 'danger'
   gem 'rspec-rails', '~> 3.0'
 end
 
@@ -32,4 +31,3 @@ group :test do
   gem 'brakeman'
   gem 'coveralls', require: false
 end
-
