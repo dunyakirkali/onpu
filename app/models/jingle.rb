@@ -6,5 +6,5 @@ class Jingle < ApplicationRecord
   has_attached_file :audio
 
   # Validations
-  validates_attachment :mp3, content_type: { content_type: ['audio/mpeg', 'audio/mp3'] }, file_name: { matches: [/mp3\Z/] }
+  validates_attachment :audio, content_type: { content_type: ['audio/mpeg', 'audio/mp3'] }, file_name: { matches: [/mp3\Z/] }
 end
