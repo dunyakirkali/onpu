@@ -5,7 +5,7 @@ class Users::JinglesController < ApplicationController
   # GET /jingles
   # GET /jingles.json
   def index
-    @jingles = current_user.jingles
+    @jingles = Jingle.all
   end
 
   # GET /jingles/1

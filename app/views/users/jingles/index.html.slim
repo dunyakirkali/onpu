@@ -1,25 +1,21 @@
-h1 Listing jingles
+h2 Listing jingles
 
-table.ui.celled.table
-  thead
-    tr
-      th Title
-      th User
-      th File
-      th
-      th
-      th
+.ui.items
+  - @jingles.each do |jingle|
+    .item
+      .ui.small.image
+        = link_to [:users, jingle] do
+          = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
+      .content
+        .header = jingle.title
+        .meta
+          span.price $1200
+          span.stay 1 Month
+        .description
+          = jingle.user.email
+          br
+          = link_to 'Edit', edit_users_jingle_path(jingle)
+          = ' | '
+          = link_to 'Destroy', [:users, jingle], data: { confirm: 'Are you sure?' }, method: :delete
 
-  tbody
-    - @jingles.each do |jingle|
-      tr
-        td = jingle.title
-        td = jingle.user.email
-        td = audio_tag(jingle.audio.url, controls: true)
-        td = link_to 'Show', [:users, jingle]
-        td = link_to 'Edit', edit_users_jingle_path(jingle)
-        td = link_to 'Destroy', [:users, jingle], data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Jingle', new_users_jingle_path, class: 'ui button'
+= link_to 'New Jingle', new_users_jingle_path, class: 'ui primary button'
