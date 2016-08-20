@@ -7,6 +7,16 @@ p
   strong User:
   = @jingle.user_id
 
+
+#jingle-player.cp-jplayer
+#jp_container_1.jp-audio aria-label=("media player") role="application"
+  .jp-controls
+    .icon-play3
+    .icon-pause2.hidden
+
 = link_to 'Edit', edit_users_jingle_path(@jingle)
 '|
 = link_to 'Back', users_jingles_path
+
+javascript:
+  jingle = new Jingle({ target: '#jingle-player', file: "#{@jingle.audio.url}" })
