@@ -21,3 +21,5 @@ Procfile.dev.env
 coverage/*
 
 /public/system
+
+/coverage

@@ -1,4 +1,4 @@
-= form_for [:users, @jingle], html: { multipart: true } do |f|
+= form_for [:users, @jingle], html: { multipart: true, class: 'ui form' } do |f|
   - if @jingle.errors.any?
     #error_explanation
       h2 = "#{pluralize(@jingle.errors.count, "error")} prohibited this jingle from being saved:"
@@ -11,4 +11,6 @@
     = f.text_field :title
   .field
     = f.file_field :audio
-  .actions = f.submit class: 'ui button'
+  = link_to 'Back', users_jingles_path, class: 'ui button'
+  = f.submit class: 'ui primary button'
+  

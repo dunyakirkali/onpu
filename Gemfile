@@ -24,15 +24,17 @@ gem 'rollbar', '~> 2.12.0'
 gem 'icomoon-rails', '~> 0.1.0'
 
 group :development, :test do
+  gem 'faker'
   gem 'bundler-audit'
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.7.0'
 end
 
 group :development do
+  gem 'rubocop'
   gem 'binding_of_caller'
   gem 'web-console'
-  gem 'listen', '~> 3.0.5'
+  gem 'listen', '~> 3.1.5'
   gem 'better_errors'
   gem 'bullet'
 end

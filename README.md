@@ -1,24 +1,22 @@
-# README
+# Onpu
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![](https://img.shields.io/badge/Ruby-2.3.0-green.svg)
+![](https://img.shields.io/badge/Rails-5.0.0.1-green.svg)
+[![Circle CI](https://circleci.com/gh/ahtung/onpu/tree/master.svg?style=shield&circle-token=395a9cc061c0ca14015d4da44de6e3f25561e373)](https://circleci.com/gh/ahtung/onpu/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/ahtung/onpu/badge.svg?branch=master&t=VAscs6)](https://coveralls.io/github/ahtung/onpu?branch=master)
 
-Things you may want to cover:
+## Tech
 
-* Ruby version
+- Postgres
 
-* System dependencies
+## Develop
 
-* Configuration
+### Run
 
-* Database creation
+    foreman start -e Procfile.dev.env -f Procfile.dev
 
-* Database initialization
+## Test
 
-* How to run the test suite
+In order to run the specs use the usual
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    foreman run -e Procfile.dev.env rspec (development)

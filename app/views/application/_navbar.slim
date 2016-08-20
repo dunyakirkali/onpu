@@ -1,22 +1,20 @@
-.ui.fixed.inverted.menu
+.ui.inverted.menu
   .ui.container
     = link_to root_path, class: "header item" do
-      img class="logo" src="assets/images/logo.png"
+      = image_tag 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png'
       | Onpu
-    = link_to 'Logout', destroy_user_session_path, class: "header item", method: :delete if user_signed_in?
-
-    .ui.simple.dropdown.item
-      | Dropdown
-      i.dropdown.icon
-      .menu
-        a class="item" href="#" Link Item
-        a class="item" href="#" Link Item
-        .divider
-        .header Header Item
-        .item
-          i class="dropdown icon"
-          | Sub Menu
-          .menu
-            a class="item" href="#" Link Item
-            a class="item" href="#" Link Item
-        a class="item" href="#" Link Item
+    - if current_user
+      .ui.simple.dropdown.item
+        = current_user.email
+        i.dropdown.icon
+        .menu
+          = link_to 'New Jingle', new_users_jingle_path, class: 'ui item'
+          = link_to 'My Jingles', users_jingles_path, class: 'ui item'
+          .divider
+          .header User
+          .item
+            i class="dropdown icon"
+            | Edit
+            .menu
+              = link_to 'Profile', '#', class: "item"
+          = link_to 'Logout', destroy_user_session_path, class: "item", method: :delete
