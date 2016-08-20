@@ -31,7 +31,7 @@ end
 group :development do
   gem 'binding_of_caller'
   gem 'web-console'
-  gem 'listen', '~> 3.0.5'
+  gem 'listen', '~> 3.1.5'
   gem 'better_errors'
   gem 'bullet'
 end
