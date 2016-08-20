@@ -21,6 +21,7 @@ gem 'foreman'
 gem 'paperclip', '~> 5.0.0'
 gem 'friendly_id', '~> 5.1.0'
 gem 'rollbar', '~> 2.12.0'
+gem 'icomoon-rails', '~> 0.1.0'
 
 group :development, :test do
   gem 'bundler-audit'
@@ -45,4 +46,5 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-dropzone'
   gem 'rails-assets-howler'
+  gem 'rails-assets-jplayer'
 end
