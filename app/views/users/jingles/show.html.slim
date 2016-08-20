@@ -7,6 +7,5 @@ p
   strong User:
   = @jingle.user_id
 
-= link_to 'Edit', edit_users_jingle_path(@jingle)
-'|
-= link_to 'Back', users_jingles_path
+= link_to 'Edit', edit_users_jingle_path(@jingle), class: 'ui button primary'
+= link_to 'Back', users_jingles_path, class: 'ui button'
