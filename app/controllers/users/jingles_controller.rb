@@ -1,5 +1,5 @@
 class Users::JinglesController < ApplicationController
-  before_action :set_jingle, only: [:buy, :show, :edit, :update, :destroy]
+  before_action :set_jingle, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
   def index
@@ -41,7 +41,7 @@ class Users::JinglesController < ApplicationController
   private
 
   def set_jingle
-    @jingle = current_user.friendly.find(params[:id])
+    @jingle = current_user.jingles.friendly.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
