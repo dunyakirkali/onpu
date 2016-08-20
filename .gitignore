@@ -17,4 +17,9 @@
 .byebug_history
 Procfile.dev.env
 
+# Coverage
+coverage/*
+
 /public/system
+
+/coverage
