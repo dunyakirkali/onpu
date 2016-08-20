@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   # Relations
-  has_many :jingles
+  has_many :jingles, dependent: :destroy
 
   # A method nedeed by omniauth-google-oauth2 gem
   # User is being created if it does not exist

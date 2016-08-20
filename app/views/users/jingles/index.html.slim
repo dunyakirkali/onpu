@@ -12,7 +12,7 @@ h2 Listing jingles
           span.price $1200
           span.stay 1 Month
         .description
-          = jingle.user.email
+          = jingle.user ? jingle.user.email : 'N/A'
           br
           = link_to 'Edit', edit_users_jingle_path(jingle)
           = ' | '

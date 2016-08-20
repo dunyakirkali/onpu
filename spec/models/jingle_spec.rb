@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Jingle, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # Relations
+  it { should belong_to(:user) }
 end
