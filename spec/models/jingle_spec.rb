@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Jingle, type: :model do
   # Relations
-  it { should belong_to(:user) }
   it { should have_attached_file(:audio) }
+  it { should belong_to(:user) }
 
   # Validations
   it { should validate_attachment_presence(:audio) }
