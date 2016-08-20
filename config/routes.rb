@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :jingles
   end
 
-  resources :jingles do
+  resources :jingles, only: [:show, :index] do
     member do
       get :buy
     end
