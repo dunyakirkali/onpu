@@ -23,6 +23,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'rollbar'
 
 group :development, :test do
+  gem 'faker'
   gem 'bundler-audit'
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.7.0'
