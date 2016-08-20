@@ -18,3 +18,5 @@
 Procfile.dev.env
 
 /public/system
+
+/coverage
