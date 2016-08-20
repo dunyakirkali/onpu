@@ -1,7 +1,7 @@
 .ui.inverted.menu
   .ui.container
     = link_to root_path, class: "header item" do
-      img class="logo" src="assets/images/logo.png"
+      = image_tag 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png'
       | Onpu
     - if current_user
       .ui.simple.dropdown.item
