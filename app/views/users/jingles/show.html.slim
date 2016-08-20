@@ -17,4 +17,7 @@ p
 = link_to 'Back', users_jingles_path, class: 'ui button'
 
 javascript:
-  jingle = new Jingle({ target: '#jingle-player', file: "#{@jingle.audio.url}" })
+  jingle = new Jingle({
+    target: '#jingle-player',
+    file: "#{@jingle.audio.url}"
+  })
