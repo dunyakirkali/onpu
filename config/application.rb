@@ -16,7 +16,9 @@ require 'sprockets/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Onpu
 module Onpu
+  # Application
   class Application < Rails::Application
     # Time zone
     config.time_zone = 'Istanbul'

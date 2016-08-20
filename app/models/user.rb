@@ -1,3 +1,4 @@
+# User
 class User < ApplicationRecord
   devise :database_authenticatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
@@ -10,6 +11,6 @@ class User < ApplicationRecord
     data = access_token.info
     User.where(email: data['email']).first_or_create(
       refresh_token: access_token.credentials ? access_token.credentials.refresh_token : nil
-   )
+    )
   end
 end
