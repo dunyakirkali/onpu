@@ -1,0 +1,21 @@
+
+.ui.container
+  .ui.masthead.vertical.segment
+    .ui.text.container
+      h2 Listing jingles
+
+  .ui.items
+    - @jingles.each do |jingle|
+      .item
+        .ui.small.image
+          = link_to jingle do
+            = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
+        .content
+          .header = jingle.title
+          .meta
+            span.price $1200
+            span.stay 1 Month
+          .description
+            = jingle.user ? jingle.user.email : 'N/A'
+            br
+            = link_to 'Buy', buy_jingle_path(jingle)

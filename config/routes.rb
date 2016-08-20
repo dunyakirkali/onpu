@@ -3,5 +3,12 @@ Rails.application.routes.draw do
   namespace :users do
     resources :jingles
   end
-  root to: 'users/jingles#index'
+
+  resources :jingles do
+    member do
+      get :buy
+    end
+  end
+
+  root to: 'jingles#index'
 end
