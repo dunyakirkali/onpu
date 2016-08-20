@@ -13,5 +13,9 @@ class @Jingle
           mp3: file
         return
       play: ->
-        $('.icon-play3').addClass('icon-pause2').removeClass('.icon-play3')
+        $('.icon-play3').addClass('hidden')
+        $('.icon-pause2').removeClass('hidden')
+      pause: ->
+        $('.icon-play3').removeClass('hidden')
+        $('.icon-pause2').addClass('hidden')
     return
