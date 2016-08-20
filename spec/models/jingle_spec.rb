@@ -6,6 +6,8 @@ RSpec.describe Jingle, type: :model do
   it { should belong_to(:user) }
 
   # Validations
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:user) }
   it { should validate_attachment_presence(:audio) }
   it { should validate_attachment_content_type(:audio).allowing('audio/mpeg', 'audio/mp3').rejecting('text/plain', 'text/xml') }
 end
