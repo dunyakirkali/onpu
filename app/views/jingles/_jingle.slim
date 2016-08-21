@@ -13,6 +13,10 @@
           | Buy
           i.right.chevron.icon
       - if policy(jingle).edit?
-        = link_to 'Edit', edit_users_jingle_path(jingle)
+        .ui.right.floated.button href="#{edit_users_jingle_path(jingle)}"
+          | Edit
+          i.right.chevron.icon 
       - if policy(jingle).destroy?
-        = link_to 'Destroy', [:users, jingle], data: { confirm: 'Are you sure?' }, method: :delete
+        .ui.right.floated.button href="#{users_jingle_path(jingle)}"
+          | Destroy
+          i.right.chevron.icon 
