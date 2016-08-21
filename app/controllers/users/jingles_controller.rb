@@ -6,7 +6,7 @@ module Users
     before_action :authenticate_user!
 
     def index
-      @jingles = current_user.jingles
+      @jingles = current_user.jingles.page(params[:page])
     end
 
     def show

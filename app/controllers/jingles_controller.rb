@@ -8,7 +8,7 @@ class JinglesController < ApplicationController
   end
 
   def index
-    @jingles = Jingle.all.includes(:user)
+    @jingles = Jingle.all.includes(:user).page(params[:page])
   end
 
   def show
