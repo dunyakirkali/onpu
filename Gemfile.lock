@@ -117,6 +117,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (2.0.2)
     jwt (1.5.4)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -327,6 +330,7 @@ DEPENDENCIES
   icomoon-rails (~> 0.1.0)
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari
   listen (~> 3.1.5)
   money-rails
   omniauth-google-oauth2 (~> 0.4.1)
