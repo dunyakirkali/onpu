@@ -4,18 +4,4 @@
       h2 Listing jingles
 
   .ui.link.items
-    - @jingles.each do |jingle|
-      
-      = link_to jingle, class: 'item' do  
-        .ui.small.image = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
-        .content
-          .header = jingle.title
-          .meta
-            span.price $1200
-            span.stay 1 Month
-          .description
-            p = jingle.user ? jingle.user.email : 'N/A'
-          .extra
-            .ui.right.floated.primary.button href="#{buy_jingle_path(jingle)}"
-              | Buy
-              i.right.chevron.icon
+    = render partial: 'jingle', collection: @jingles

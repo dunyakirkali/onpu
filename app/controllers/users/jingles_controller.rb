@@ -6,7 +6,7 @@ module Users
     before_action :authenticate_user!
 
     def index
-      @jingles = current_user.jingles.includes(:user)
+      @jingles = current_user.jingles
     end
 
     def show

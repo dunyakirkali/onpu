@@ -1,0 +1,18 @@
+= link_to jingle, class: 'item' do  
+  .ui.small.image = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
+  .content
+    .header = jingle.title
+    .meta
+      span.price $1200
+      span.stay 1 Month
+    .description
+      p = jingle.user ? jingle.user.email : 'N/A'
+    .extra
+      - if policy(jingle).buy?
+        .ui.right.floated.primary.button href="#{buy_jingle_path(jingle)}"
+          | Buy
+          i.right.chevron.icon
+      - if policy(jingle).edit?
+        = link_to 'Edit', edit_users_jingle_path(jingle)
+      - if policy(jingle).destroy?
+        = link_to 'Destroy', [:users, jingle], data: { confirm: 'Are you sure?' }, method: :delete
