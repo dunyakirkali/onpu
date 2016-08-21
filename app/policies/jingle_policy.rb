@@ -1,3 +1,4 @@
+# JinglePolicy
 class JinglePolicy < ApplicationPolicy
   attr_reader :user, :jingle
 
