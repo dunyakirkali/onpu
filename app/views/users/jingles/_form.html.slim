@@ -9,13 +9,18 @@
   .field
     = f.label :title
     = f.text_field :title
+
   .field
+    = f.label :price
     .ui.right.labeled.input
-      .ui.label $
+      .ui.label = currency_symbol
       = f.text_field :price
       .ui.basic.label .00
+
   .field
+    = f.label :audio
     = f.file_field :audio
+
   = link_to 'Back', users_jingles_path, class: 'ui button'
   = f.submit class: 'ui primary button'
   
