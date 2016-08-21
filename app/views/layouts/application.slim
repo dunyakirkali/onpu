@@ -9,9 +9,8 @@ html lang="#{ I18n.locale }"
     meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'
     = render 'favicon'
   
-  body
-    = render 'sidebar'
-    .pusher
-      = render 'navbar'
-      = yield
-      = render 'footer'
+  body style='height:100%;'
+    - if user_signed_in?
+      = render 'navbar', title: current_user.email
+    = yield
+    = render 'footer'

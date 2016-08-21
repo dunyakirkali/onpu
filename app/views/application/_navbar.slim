@@ -1,21 +1,16 @@
-.ui.inverted.menu
+.pusher
   .ui.container
-    = link_to root_path, class: "header item" do
-      = image_tag 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png'
-      | Onpu
-    - if current_user
-      = link_to 'M', '#', { class: 'item', onclick: "$('.ui.sidebar').sidebar('toggle');" }
-      .ui.simple.dropdown.item
-        = current_user.email
-        i.dropdown.icon
-        .menu
-          = link_to 'New Jingle', new_users_jingle_path, class: 'ui item'
-          = link_to 'My Jingles', users_jingles_path, class: 'ui item'
-          .divider
-          .header User
-          .item
-            i class="dropdown icon"
-            | Edit
+    .ui.masthead.vertical.segment
+      .ui.text.container
+        h2.ui.header
+          .ui.dropdown
+            .text = title
+            i.dropdown.icon
             .menu
-              = link_to 'Profile', '#', class: "item"
-          = link_to 'Logout', destroy_user_session_path, class: "item", method: :delete
+              = link_to 'New Jingle', new_users_jingle_path, class: 'ui item'
+              = link_to 'All Jingles', jingles_path, class: 'ui item'
+              = link_to 'My Jingles', users_jingles_path, class: 'ui item'
+              = link_to 'Logout', destroy_user_session_path, class: "item", method: :delete
+
+javascript:
+  $('.ui.dropdown').dropdown();

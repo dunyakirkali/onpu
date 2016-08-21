@@ -1,22 +1,17 @@
-= link_to jingle, class: 'item' do  
-  .ui.small.image = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
-  .content
-    .header = jingle.title
-    .meta
-      span.price $1200
-      span.stay 1 Month
-    .description
-      p = jingle.user ? jingle.user.email : 'N/A'
-    .extra
-      - if policy(jingle).buy?
-        .ui.right.floated.primary.button href="#{buy_jingle_path(jingle)}"
-          | Buy
-          i.right.chevron.icon
-      - if policy(jingle).edit?
-        .ui.right.floated.button href="#{edit_users_jingle_path(jingle)}"
-          | Edit
-          i.right.chevron.icon 
-      - if policy(jingle).destroy?
-        .ui.right.floated.button href="#{users_jingle_path(jingle)}"
-          | Destroy
-          i.right.chevron.icon 
+.ui.text.container
+  p = "#{jingle.title} by #{jingle.user.email}"
+
+  #jingle-player.cp-jplayer
+  #jp_container_1.jp-audio aria-label=("media player") role="application"
+    .jp-controls
+      .icon-play3
+      .icon-pause2.hidden
+
+  - if policy(jingle).edit?
+    = link_to 'Edit', edit_users_jingle_path(jingle), class: 'ui button primary'
+
+javascript:
+  jingle = new Jingle({
+    target: '#jingle-player',
+    file: "#{jingle.audio.url}"
+  })

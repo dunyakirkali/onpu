@@ -1,8 +1,8 @@
 .ui.container
   .ui.masthead.vertical.segment
     .ui.text.container
-      h2 Your jingles
+      h2.ui.header Your jingles
 
   .ui.link.items
-    = render partial: 'jingles/jingle', collection: @jingles
+    = render partial: 'jingles/item', collection: @jingles
   = paginate @jingles

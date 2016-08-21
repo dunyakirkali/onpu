@@ -1,0 +1,22 @@
+= link_to item, class: 'item' do  
+  .ui.small.image = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
+  .content
+    .header = item.title
+    .meta
+      span.price $1200
+      span.stay 1 Month
+    .description
+      p = item.user ? item.user.email : 'N/A'
+    .extra
+      - if policy(item).buy?
+        .ui.right.floated.primary.button href="#{buy_jingle_path(item)}"
+          | Buy
+          i.right.chevron.icon
+      - if policy(item).edit?
+        .ui.right.floated.button href="#{edit_users_jingle_path(item)}"
+          | Edit
+          i.right.chevron.icon 
+      - if policy(item).destroy?
+        .ui.right.floated.button href="#{users_jingle_path(item)}"
+          | Destroy
+          i.right.chevron.icon 
