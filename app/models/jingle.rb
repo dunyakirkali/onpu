@@ -1,7 +1,11 @@
 # Jingle
 class Jingle < ApplicationRecord
+  # FriendlyId
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  # Money
+  monetize :price_cents
 
   # Relations
   has_attached_file :audio
