@@ -1,20 +1,15 @@
-p#notice = notice
-
-p
-  strong Title:
+.ui.container
   = @jingle.title
-p
-  strong User:
-  = @jingle.user_id
+  = @jingle.user.email
 
-#jingle-player.cp-jplayer
-#jp_container_1.jp-audio aria-label=("media player") role="application"
-  .jp-controls
-    .icon-play3
-    .icon-pause2.hidden
+  #jingle-player.cp-jplayer
+  #jp_container_1.jp-audio aria-label=("media player") role="application"
+    .jp-controls
+      .icon-play3
+      .icon-pause2.hidden
 
-= link_to 'Edit', edit_users_jingle_path(@jingle), class: 'ui button primary'
-= link_to 'Back', users_jingles_path, class: 'ui button'
+  = link_to 'Edit', edit_users_jingle_path(@jingle), class: 'ui button primary'
+  = link_to 'Back', users_jingles_path, class: 'ui button'
 
 javascript:
   jingle = new Jingle({
