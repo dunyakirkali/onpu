@@ -1,10 +1,5 @@
-p#notice = notice
-
-p
-  strong Title:
-  = @jingle.title
-p
-  strong User:
-  = @jingle.user_id
-
-= link_to 'Back', jingles_path, class: 'ui button'
+.ui.container
+  p
+    = @jingle.title
+    br
+    = @jingle.user.email

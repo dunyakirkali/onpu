@@ -4,6 +4,7 @@
       = image_tag 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png'
       | Onpu
     - if current_user
+      = link_to 'M', '#', { class: 'item', onclick: "$('.ui.sidebar').sidebar('toggle');" }
       .ui.simple.dropdown.item
         = current_user.email
         i.dropdown.icon
