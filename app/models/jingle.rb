@@ -14,6 +14,7 @@ class Jingle < ApplicationRecord
 
   # Filters
   after_create :create_parasut_product
+  # TODO: (dunyakirkali) update
   before_destroy :destroy_parasut_product
 
   # Money
