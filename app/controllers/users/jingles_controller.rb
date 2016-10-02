@@ -14,6 +14,7 @@ module Users
 
     def new
       @jingle = current_user.jingles.build
+      render layout: false
     end
 
     def edit
