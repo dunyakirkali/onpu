@@ -21,9 +21,9 @@ class Jingle < ApplicationRecord
   validates :user, :title, presence: true
 
   # Filters
-  # after_create :create_parasut_product
-  # after_create :update_parasut_product
-  # before_destroy :destroy_parasut_product
+  after_create :create_parasut_product
+  after_create :update_parasut_product
+  before_destroy :destroy_parasut_product
 
   private
 
