@@ -49,6 +49,7 @@ group :test do
   gem 'webmock'
   gem 'slim_lint'
   gem 'rails-controller-testing'
+  gem 'pundit-matchers', '~> 1.1.0'
 end
 
 source 'https://rails-assets.org' do
