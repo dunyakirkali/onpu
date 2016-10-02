@@ -12,6 +12,7 @@ module Users
     end
 
     def edit
+      render layout: false
     end
 
     def create
@@ -27,10 +28,13 @@ module Users
     end
 
     def update
-      if @jingle.update(jingle_params)
-        redirect_to search_jingles_path, notice: 'Jingle was successfully updated.'
-      else
-        render :edit
+      respond_to do |format|
+        if @jingle.update(jingle_params)
+          format.js { render layout: false }
+          format.html { redirect_to search_jingles_path, notice: 'Jingle was successfully created.' }
+        else
+          format.js { render layout: false }
+        end
       end
     end
 
