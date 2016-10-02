@@ -4,7 +4,7 @@ module Users
   module JinglesHelper
     # Link to delete user jingle
     def delete_user_jingle(path)
-      content_tag(:a, 'Destroy', data: { confirm: 'Are you sure?', method: :delete }, href: path)
+      link_to 'Destroy', path, data: { confirm: 'Are you sure?' }, method: :delete
     end
   end
 end
