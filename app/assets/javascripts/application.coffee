@@ -5,3 +5,8 @@
 #= require isotope
 #= require jplayer
 #= require jingle
+
+$ ->
+  $('body').on('click', () ->
+    $('.ui.sidebar').sidebar('toggle')
+  )
