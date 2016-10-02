@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160821180754) do
+ActiveRecord::Schema.define(version: 20160918184951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160821180754) do
     t.string   "slug"
     t.integer  "price_cents",        default: 0,     null: false
     t.string   "price_currency",     default: "USD", null: false
+    t.integer  "parasut_id"
     t.index ["slug"], name: "index_jingles_on_slug", unique: true, using: :btree
   end
 
