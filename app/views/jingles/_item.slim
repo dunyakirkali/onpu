@@ -1,22 +1,20 @@
-= link_to item do  
-  .ui.small.image = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
+.ui.card
+  .ui.image
+    = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
   .content
-    .header = item.title
+    a.header = link_to item.title, item
     .meta
-      span.price $1200
-      span.stay 1 Month
+      span.price = number_to_currency(item.price, unit: item.price_currency)
     .description
-      p = item.user ? item.user.email : 'N/A'
-    .extra
-      - if policy(item).buy?
-        .ui.right.floated.primary.button href="#{buy_jingle_path(item)}"
-          | Buy
-          i.right.chevron.icon
-      - if policy(item).edit?
-        .ui.right.floated.button href="#{edit_users_jingle_path(item)}"
-          | Edit
-          i.right.chevron.icon 
-      - if policy(item).destroy?
-        .ui.right.floated.button href="#{users_jingle_path(item)}"
-          | Destroy
-          i.right.chevron.icon 
+      = item.user ? item.user.email : 'N/A'
+  .extra.content
+    - if policy(item).buy?
+      .ui.right.floated.primary.button href="#{buy_jingle_path(item)}"
+        | Buy
+        i.right.chevron.icon
+    - if policy(item).edit?
+      .ui.right.floated.button href="#{edit_users_jingle_path(item)}"
+        | Edit
+    - if policy(item).destroy?
+      .ui.right.floated.button href="#{users_jingle_path(item)}"
+        | Destroy
