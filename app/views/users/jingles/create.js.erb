@@ -7,5 +7,7 @@ $('#error_explanation ul').html('');
   <% end %>
   $(".ui.modal").modal("show");
 <% else %>
-  $('.ui.modal > .content').html('Hurrayy!!...');
+  $('.ui.modal').modal("close");
+  $('#jingles').html('<%= j render(partial: "jingles/item", collection: @jingles) %>');
+  $('.pagination').replaceWith('<%= j paginate(@jingles) %>');
 <% end %>
