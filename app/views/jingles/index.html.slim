@@ -1,8 +1,4 @@
 .ui.container
-  .ui.masthead.vertical.segment
-    .ui.text.container
-      h2.ui.header All jingles
-      
-  .ui.link.items.grid
+  #jingles.ui.link.items.grid
     = render partial: 'jingles/item', collection: @jingles
   = paginate @jingles
