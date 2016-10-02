@@ -1,2 +1,2 @@
-$('.ui.modal .content').append('#{ j render "form"}');
+$('.ui.modal .content').html('<%= j render "form" %>');
 $(".ui.modal").modal("show");
