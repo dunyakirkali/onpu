@@ -10,7 +10,7 @@
 
   - if user_signed_in?
     .item
-      = link_to 'New Jingle', new_users_jingle_path, class: 'ui primary button', remote: true
+      = link_to 'New Jingle', new_users_jingle_path, class: 'ui fluid primary button', remote: true
 
     .item
       = render 'user_menu', title: current_user.email
