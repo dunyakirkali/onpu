@@ -1,5 +1,5 @@
 .header
-  h3 New jingle
+  h3 = "#{@jingle.persisted? ? 'Edit' : 'New'} jingle"
 = form_for [:users, @jingle], html: { multipart: true, class: 'ui form', remote: true } do |f|
   #error_explanation
   .field
@@ -16,7 +16,7 @@
   .field
     = f.label :audio
     = f.file_field :audio
-  
+
   .field
     = f.label :cover
     = f.file_field :cover
