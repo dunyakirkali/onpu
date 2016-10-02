@@ -18,4 +18,5 @@
           br
           = link_to 'Edit', edit_users_jingle_path(jingle)
           = ' | '
-          = link_to 'Destroy', [:users, jingle], data: { confirm: 'Are you sure?' }, method: :delete
+          = link_to [:users, jingle], data: { confirm: 'Are you sure?' }, method: :delete do
+            = 'Destroy'
