@@ -1,16 +1,17 @@
-.ui.left.vertical.inverted.sidebar.menu.visible.attached
+.ui.vertical.inverted.attached.sticky.menu style='min-height:100%'
   .item
     a.ui.logo.icon.image href="/"
       img src="http://static.zerochan.net/Segawa.Onpu.full.1191325.jpg"
-      
+
   .item
     = form_for search_jingles_path, url: search_jingles_path, method: 'get', remote: true, html: { class: 'ui form' } do
       .field
         = text_field_tag :query, params[:query], placeholder: 'Search ...', onchange: '$(this).closest("form").submit();'
-        
+
   - if user_signed_in?
     .item
       = link_to 'New Jingle', new_users_jingle_path, class: 'ui primary button'
-      
+
     .item
       = render 'user_menu', title: current_user.email
+
