@@ -1,5 +1,7 @@
 doctype html
+
 html lang="#{ I18n.locale }"
+
   head
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
@@ -7,8 +9,12 @@ html lang="#{ I18n.locale }"
     - dv = 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0'
     meta content="#{dv}" name='viewport'
     = render 'favicon'
+
   body
-    = render 'navbar'
-    .ui.container
+    = render 'sidebar'
+    .pusher
       = yield
-    = render 'footer'
+    
+    .ui.modal
+      i.close.icon
+      .content

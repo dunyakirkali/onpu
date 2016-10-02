@@ -4,11 +4,7 @@ class JinglesController < ApplicationController
   before_action :authenticate_user!
 
   def buy
-    redirect_to jingles_path, notice: 'Jingle was bought.'
-  end
-
-  def index
-    @jingles = Jingle.all.includes(:user)
+    redirect_to search_jingles_path, notice: 'Jingle was bought.'
   end
 
   def show

@@ -200,6 +200,9 @@ GEM
     puma (3.6.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
+    pundit-matchers (1.1.0)
+      pundit (~> 1.1, >= 1.1.0)
+      rspec-rails (>= 3.0.0)
     rack (2.0.1)
     rack-attack (5.0.1)
       rack
@@ -217,11 +220,29 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.0.1)
       sprockets-rails (>= 2.0.0)
+    rails-assets-desandro-matches-selector (2.0.1)
     rails-assets-dropzone (4.3.0)
+    rails-assets-ev-emitter (1.0.3)
+    rails-assets-fizzy-ui-utils (2.0.3)
+      rails-assets-desandro-matches-selector (~> 2.0.0)
+    rails-assets-get-size (2.0.2)
     rails-assets-howler (2.0.0)
+    rails-assets-isotope (3.0.1)
+      rails-assets-desandro-matches-selector (>= 2.0.0, < 3)
+      rails-assets-fizzy-ui-utils (>= 2.0.0, < 3)
+      rails-assets-get-size (>= 2.0.0, < 3)
+      rails-assets-masonry (>= 4.1.0, < 5)
+      rails-assets-outlayer (>= 2.1.0, < 3)
     rails-assets-jplayer (2.9.2)
       rails-assets-jquery (>= 1.7.2)
     rails-assets-jquery (3.1.1)
+    rails-assets-masonry (4.1.1)
+      rails-assets-get-size (>= 2.0.2, < 3)
+      rails-assets-outlayer (>= 2.1.0, < 3)
+    rails-assets-outlayer (2.1.0)
+      rails-assets-ev-emitter (>= 1.0.0, < 2)
+      rails-assets-fizzy-ui-utils (>= 2.0.0, < 3)
+      rails-assets-get-size (>= 2.0.2, < 3)
     rails-controller-testing (1.0.1)
       actionpack (~> 5.x)
       actionview (~> 5.x)
@@ -280,7 +301,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    semantic-ui-sass (2.2.2.2)
+    semantic-ui-sass (2.2.4.0)
       sass (>= 3.2)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
@@ -361,6 +382,7 @@ DEPENDENCIES
   icomoon-rails (~> 0.1.0)
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari
   listen (~> 3.1.5)
   money-rails
   omniauth-google-oauth2 (~> 0.4.1)
@@ -369,17 +391,19 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   pundit (~> 1.1.0)
+  pundit-matchers (~> 1.1.0)
   rack-attack (~> 5.0.1)
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-assets-dropzone!
   rails-assets-howler!
+  rails-assets-isotope!
   rails-assets-jplayer!
   rails-controller-testing
   rollbar (~> 2.12.0)
   rspec-rails (~> 3.0)
   rubocop
   sass-rails (~> 5.0)
-  semantic-ui-sass (~> 2.2.2.2)
+  semantic-ui-sass (~> 2.2.4)
   shoulda-matchers (~> 3.0)
   sidekiq (~> 4.1.2)
   slim-rails (~> 3.1.0)

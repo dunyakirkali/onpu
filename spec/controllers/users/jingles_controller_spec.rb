@@ -6,18 +6,9 @@ RSpec.describe Users::JinglesController, type: :controller do
   let(:valid_attributes) { attributes_for(:jingle) }
   let(:invalid_attributes) { attributes_for(:jingle, title: nil) }
 
-  describe 'GET #index' do
-    it 'assigns all jingles as @jingles' do
-      jingle = create(:jingle, valid_attributes)
-      @user.jingles << jingle
-      process :index, method: :get, params: {}
-      expect(assigns(:jingles)).to match_array([jingle])
-    end
-  end
-
   describe 'GET #new' do
     it 'assigns a new jingle as @jingle' do
-      process :new, method: :get, params: {}
+      get :new, xhr: true, params: {}
       expect(assigns(:jingle)).to be_a_new(Jingle)
     end
   end
@@ -26,7 +17,7 @@ RSpec.describe Users::JinglesController, type: :controller do
     it 'assigns the requested jingle as @jingle' do
       jingle = create(:jingle, valid_attributes)
       @user.jingles << jingle
-      process :edit, method: :get, params: { id: jingle.to_param }
+      process :edit, method: :get, params: { id: jingle.to_param }, format: :js
       expect(assigns(:jingle)).to eq(jingle)
     end
   end
@@ -35,31 +26,31 @@ RSpec.describe Users::JinglesController, type: :controller do
     context 'with valid params' do
       it 'creates a new Jingle' do
         expect do
-          process :create, method: :post, params: { jingle: valid_attributes }
+          post :create, xhr: true, params: { jingle: valid_attributes }
         end.to change(Jingle, :count).by(1)
       end
 
       it 'assigns a newly created catgory as @jingle' do
-        process :create, method: :post, params: { jingle: valid_attributes }
+        post :create, xhr: true, params: { jingle: valid_attributes }
         expect(assigns(:jingle)).to be_a(Jingle)
         expect(assigns(:jingle)).to be_persisted
       end
 
       it 'redirects to the created jingle' do
-        process :create, method: :post, params: { jingle: valid_attributes }
-        expect(response).to redirect_to(users_jingle_path(Jingle.last))
+        post :create, params: { jingle: valid_attributes }
+        expect(response).to redirect_to(search_jingles_path)
       end
     end
 
     context 'with invalid params' do
       it 'assigns a newly created but unsaved jingle as @jingle' do
-        process :create, method: :post, params: { jingle: invalid_attributes }
+        post :create, xhr: true, params: { jingle: invalid_attributes }, format: :js
         expect(assigns(:jingle)).to be_a_new(Jingle)
       end
 
       it "re-renders the 'new' template" do
-        process :create, method: :post, params: { jingle: invalid_attributes }
-        expect(response).to render_template('new')
+        post :create, xhr: true, params: { jingle: invalid_attributes }, format: :js
+        expect(response).to render_template('users/jingles/create')
       end
     end
   end
@@ -86,7 +77,12 @@ RSpec.describe Users::JinglesController, type: :controller do
 
       it 'redirects to the jingle' do
         process :update, method: :put, params: { id: @jingle.to_param, jingle: valid_attributes }
-        expect(response).to redirect_to(users_jingle_path(@jingle))
+        expect(response).to redirect_to(search_jingles_path)
+      end
+
+      it 'assigns jingles if format is js' do
+        process :update, method: :put, params: { id: @jingle.to_param, jingle: valid_attributes }, format: :js
+        expect(assigns(:jingles)).to eq(@user.jingles)
       end
     end
 
@@ -97,13 +93,13 @@ RSpec.describe Users::JinglesController, type: :controller do
       end
 
       it 'assigns the jingle as @jingle' do
-        process :update, method: :put, params: { id: @jingle.to_param, jingle: invalid_attributes }
+        process :update, method: :put, params: { id: @jingle.to_param, jingle: invalid_attributes }, format: :js
         expect(assigns(:jingle)).to eq(@jingle)
       end
 
       it "re-renders the 'edit' template" do
-        process :update, method: :put, params: { id: @jingle.to_param, jingle: invalid_attributes }
-        expect(response).to render_template('edit')
+        process :update, method: :put, params: { id: @jingle.to_param, jingle: invalid_attributes }, format: :js
+        expect(response).to render_template('users/jingles/update')
       end
     end
   end
@@ -121,7 +117,7 @@ RSpec.describe Users::JinglesController, type: :controller do
       jingle = create(:jingle, valid_attributes)
       @user.jingles << jingle
       process :destroy, method: :delete, params: { id: jingle.to_param }
-      expect(response).to redirect_to(users_jingles_path)
+      expect(response).to redirect_to(search_jingles_path)
     end
   end
 end

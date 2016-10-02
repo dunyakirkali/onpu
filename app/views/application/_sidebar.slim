@@ -1,0 +1,16 @@
+.ui.left.vertical.menu.visible.inverted.sidebar
+  .item
+    a.ui.logo.icon.image href="/"
+      = image_tag 'note.jpg', class: 'ui medium rounded image'
+
+  .item
+    = form_for search_jingles_path, url: search_jingles_path, method: 'get', remote: true, html: { class: 'ui form' } do
+      .field
+        = text_field_tag :query, params[:query], placeholder: 'Search ...', onchange: '$(this).closest("form").submit();'
+
+  - if user_signed_in?
+    .item
+      = link_to 'New Jingle', new_users_jingle_path, class: 'ui fluid primary button', remote: true
+
+    .item
+      = render 'user_menu', title: current_user.email
