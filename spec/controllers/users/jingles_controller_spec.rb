@@ -17,7 +17,7 @@ RSpec.describe Users::JinglesController, type: :controller do
     it 'assigns the requested jingle as @jingle' do
       jingle = create(:jingle, valid_attributes)
       @user.jingles << jingle
-      process :edit, method: :get, params: { id: jingle.to_param }
+      process :edit, method: :get, params: { id: jingle.to_param }, format: :js
       expect(assigns(:jingle)).to eq(jingle)
     end
   end
@@ -48,9 +48,9 @@ RSpec.describe Users::JinglesController, type: :controller do
         expect(assigns(:jingle)).to be_a_new(Jingle)
       end
 
-      xit "re-renders the 'new' template" do
-        post :create, xhr: true, params: { jingle: invalid_attributes }
-        expect(response).to render_template('new')
+      it "re-renders the 'new' template" do
+        post :create, xhr: true, params: { jingle: invalid_attributes }, format: :js
+        expect(response).to render_template('users/jingles/create')
       end
     end
   end
@@ -88,13 +88,13 @@ RSpec.describe Users::JinglesController, type: :controller do
       end
 
       it 'assigns the jingle as @jingle' do
-        process :update, method: :put, params: { id: @jingle.to_param, jingle: invalid_attributes }
+        process :update, method: :put, params: { id: @jingle.to_param, jingle: invalid_attributes }, format: :js
         expect(assigns(:jingle)).to eq(@jingle)
       end
 
       it "re-renders the 'edit' template" do
-        process :update, method: :put, params: { id: @jingle.to_param, jingle: invalid_attributes }
-        expect(response).to render_template('edit')
+        process :update, method: :put, params: { id: @jingle.to_param, jingle: invalid_attributes }, format: :js
+        expect(response).to render_template('users/jingles/update')
       end
     end
   end
