@@ -24,32 +24,32 @@ RSpec.describe Users::JinglesController, type: :controller do
 
   describe 'POST #create' do
     context 'with valid params' do
-      xit 'creates a new Jingle' do
+      it 'creates a new Jingle' do
         expect do
-          process :create, method: :post, params: { jingle: valid_attributes }
+          post :create, xhr: true, params: { jingle: valid_attributes }
         end.to change(Jingle, :count).by(1)
       end
 
-      xit 'assigns a newly created catgory as @jingle' do
-        process :create, method: :post, params: { jingle: valid_attributes }
+      it 'assigns a newly created catgory as @jingle' do
+        post :create, xhr: true, params: { jingle: valid_attributes }
         expect(assigns(:jingle)).to be_a(Jingle)
         expect(assigns(:jingle)).to be_persisted
       end
 
       xit 'redirects to the created jingle' do
-        process :create, method: :post, params: { jingle: valid_attributes }
+        post :create, xhr: true, params: { jingle: valid_attributes }
         expect(response).to redirect_to(search_jingles_path)
       end
     end
 
     context 'with invalid params' do
-      xit 'assigns a newly created but unsaved jingle as @jingle' do
-        process :create, method: :post, params: { jingle: invalid_attributes }
+      it 'assigns a newly created but unsaved jingle as @jingle' do
+        post :create, xhr: true, params: { jingle: invalid_attributes }
         expect(assigns(:jingle)).to be_a_new(Jingle)
       end
 
       xit "re-renders the 'new' template" do
-        process :create, method: :post, params: { jingle: invalid_attributes }
+        post :create, xhr: true, params: { jingle: invalid_attributes }
         expect(response).to render_template('new')
       end
     end
