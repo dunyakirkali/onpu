@@ -7,7 +7,7 @@ RSpec.describe Users::JinglesController, type: :controller do
   let(:invalid_attributes) { attributes_for(:jingle, title: nil) }
 
   describe 'GET #index' do
-    it 'assigns all categories as @categories' do
+    it 'assigns all jingles as @jingles' do
       jingle = create(:jingle, valid_attributes)
       @user.jingles << jingle
       process :index, method: :get, params: {}
