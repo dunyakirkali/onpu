@@ -35,12 +35,16 @@ class Jingle < ApplicationRecord
       currency: price.currency.iso_code,
       list_price: price.to_s,
       archived: false,
-      category: {
-        id: 1,
-        name: 'Jingle',
-        bg_color: '5cbc68',
-        text_color: 'f3f2f2'
-      }
+      category: parasut_product_category_attrs
+    }
+  end
+
+  def parasut_product_category_attrs
+    {
+      id: 1,
+      name: 'Jingle',
+      bg_color: '5cbc68',
+      text_color: 'f3f2f2'
     }
   end
 
