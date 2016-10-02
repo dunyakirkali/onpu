@@ -1,2 +1,5 @@
-== "$('.ui.modal > .content').html('#{ j render 'form'}');"
+- if @jingle.errors.any?
+  == "$('.ui.modal > .content').html('#{ j render 'form'}');"
+- else
+  == "$('.ui.modal > .content').html('Hurrayy!!...');"
 == '$(".ui.modal").modal("show");'
