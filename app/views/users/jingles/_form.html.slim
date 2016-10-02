@@ -13,7 +13,7 @@
     = f.text_field :title
   .field
     = f.label :price
-    = f.text_field :price, value: (number_with_precision(@jingle.price, precision: 2) || 0)
+    = f.text_field :price, value: @jingle.price
   .field
     = f.file_field :audio
   = link_to 'Back', users_jingles_path, class: 'ui button'
