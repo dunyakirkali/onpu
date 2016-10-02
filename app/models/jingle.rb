@@ -21,9 +21,6 @@ class Jingle < ApplicationRecord
   after_create :update_parasut_product
   before_destroy :destroy_parasut_product
 
-  # Money
-  monetize :price_cents
-
   private
 
   def create_parasut_product
