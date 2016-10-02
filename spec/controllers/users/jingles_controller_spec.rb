@@ -91,7 +91,6 @@ RSpec.describe Users::JinglesController, type: :controller do
     end
 
     context 'with invalid params' do
-
       before :each do
         @jingle = create(:jingle, valid_attributes)
         @user.jingles << @jingle

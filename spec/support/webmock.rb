@@ -22,6 +22,7 @@ RSpec.configure do |config|
       .to_return(status: 200, body: product_hash.to_json, headers: {})
   end
 
+  # rubocop:disable Metrics/MethodLength
   def product_hash
     {
       product: {
@@ -41,4 +42,5 @@ RSpec.configure do |config|
       }
     }
   end
+  # rubocop:enable Metrics/MethodLength
 end
