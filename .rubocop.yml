@@ -1,6 +1,5 @@
 Documentation:
   Enabled: true
-
 AllCops:
   Include:
     - '**/Rakefile'
@@ -13,7 +12,6 @@ AllCops:
     - 'log/**/*'
 Rails:
   Enabled: true
-
 Metrics/AbcSize:
   Max: 15
 Metrics/BlockNesting:
@@ -29,14 +27,11 @@ Metrics/LineLength:
   URISchemes:
     - http
     - https
-
 Metrics/MethodLength:
   CountComments: false  # count full line comments?
   Max: 13
-
 Metrics/ParameterLists:
   Max: 5
   CountKeywordArgs: true
-
 Metrics/PerceivedComplexity:
   Max: 7

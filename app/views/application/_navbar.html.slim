@@ -1,8 +1,8 @@
 .ui.inverted.menu
   .ui.container
-    = link_to root_path, class: "header item" do
-      = image_tag 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png'
-      | Onpu
+    = link_to root_path, class: 'header item' do
+      i.large.sound.icon
+      = 'Onpu'
     - if current_user
       .ui.simple.dropdown.item
         = current_user.email
@@ -13,8 +13,9 @@
           .divider
           .header User
           .item
-            i class="dropdown icon"
+            i class='dropdown icon'
             | Edit
             .menu
-              = link_to 'Profile', '#', class: "item"
-          = link_to 'Logout', destroy_user_session_path, class: "item", method: :delete
+              = link_to 'Profile', '#', class: 'item'
+          = link_to destroy_user_session_path, class: 'item', method: :delete do
+            = 'Logout'

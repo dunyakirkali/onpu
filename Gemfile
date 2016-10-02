@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.3.1'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
@@ -22,6 +22,8 @@ gem 'paperclip', '~> 5.0.0'
 gem 'friendly_id', '~> 5.1.0'
 gem 'rollbar', '~> 2.12.0'
 gem 'icomoon-rails', '~> 0.1.0'
+gem 'parasut_rails'
+gem 'money-rails'
 
 group :development, :test do
   gem 'faker'
@@ -43,6 +45,9 @@ group :test do
   gem 'shoulda-matchers', '~> 3.0'
   gem 'brakeman'
   gem 'coveralls', require: false
+  gem 'webmock'
+  gem 'slim_lint'
+  gem 'rails-controller-testing'
 end
 
 source 'https://rails-assets.org' do
