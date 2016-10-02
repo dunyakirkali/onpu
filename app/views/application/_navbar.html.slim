@@ -17,5 +17,5 @@
             | Edit
             .menu
               = link_to 'Profile', '#', class: 'item'
-          = link_to destroy_user_session_path, class: 'item', method: :delete
+          = link_to destroy_user_session_path, class: 'item', method: :delete do
             = 'Logout'
