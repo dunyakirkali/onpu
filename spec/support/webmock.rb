@@ -10,6 +10,9 @@ RSpec.configure do |config|
     stub_request(:post, 'https://api.parasut.com/oauth/token?client_id&client_secret&grant_type=refresh_token&refresh_token')
       .to_return(status: 200, body: {}.to_json, headers: {})
 
+    stub_request(:put, 'https://api.parasut.com/v1/products/1')
+      .to_return(status: 200, body: product_hash.to_json, headers: {})
+
     stub_request(:delete, 'https://api.parasut.com/v1/products/1')
       .to_return(status: 200, body: {
         success: 'OK'

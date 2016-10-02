@@ -28,8 +28,7 @@ class Jingle < ApplicationRecord
   end
 
   def update_parasut_product
-    parasut_product = Parasut::Product.find(parasut_id)
-    parasut_product.update(parasut_product_attrs)
+    Parasut::Product.save_existing(parasut_id, parasut_product_attrs)
   end
 
   def parasut_product_attrs
