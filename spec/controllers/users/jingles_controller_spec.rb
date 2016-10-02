@@ -38,7 +38,7 @@ RSpec.describe Users::JinglesController, type: :controller do
 
       it 'redirects to the created jingle' do
         process :create, method: :post, params: { jingle: valid_attributes }
-        expect(response).to redirect_to(users_jingle_path(Jingle.last))
+        expect(response).to redirect_to(search_jingles_path)
       end
     end
 
@@ -77,7 +77,7 @@ RSpec.describe Users::JinglesController, type: :controller do
 
       it 'redirects to the jingle' do
         process :update, method: :put, params: { id: @jingle.to_param, jingle: valid_attributes }
-        expect(response).to redirect_to(users_jingle_path(@jingle))
+        expect(response).to redirect_to(search_jingles_path)
       end
     end
 

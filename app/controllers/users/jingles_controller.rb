@@ -5,13 +5,6 @@ module Users
     before_action :set_jingle, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
 
-    def index
-      @jingles = current_user.jingles.page(params[:page])
-    end
-
-    def show
-    end
-
     def new
       @jingle = current_user.jingles.build
       render layout: false
@@ -23,7 +16,10 @@ module Users
     def create
       @jingle = current_user.jingles.build(jingle_params)
       if @jingle.save
-        redirect_to users_jingle_path(@jingle), notice: 'Jingle was successfully created.'
+        respond_to do |format|
+          format.js { render layout: false }
+          format.html { redirect_to search_jingles_path, notice: 'Jingle was successfully created.' }
+        end
       else
         render :new
       end
@@ -31,7 +27,7 @@ module Users
 
     def update
       if @jingle.update(jingle_params)
-        redirect_to users_jingle_path(@jingle), notice: 'Jingle was successfully updated.'
+        redirect_to search_jingles_path, notice: 'Jingle was successfully updated.'
       else
         render :edit
       end
