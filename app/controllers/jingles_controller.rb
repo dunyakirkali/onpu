@@ -7,10 +7,6 @@ class JinglesController < ApplicationController
     redirect_to jingles_path, notice: 'Jingle was bought.'
   end
 
-  def index
-    @jingles = Jingle.all.includes(:user).page(params[:page])
-  end
-
   def show
   end
 
