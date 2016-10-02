@@ -7,8 +7,8 @@ RSpec.describe Users::JinglesController, type: :controller do
   let(:invalid_attributes) { attributes_for(:jingle, title: nil) }
 
   describe 'GET #new' do
-    xit 'assigns a new jingle as @jingle' do
-      process :new, method: :get, params: {}
+    it 'assigns a new jingle as @jingle' do
+      get :new, xhr: true, params: {}
       expect(assigns(:jingle)).to be_a_new(Jingle)
     end
   end
