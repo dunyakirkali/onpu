@@ -6,9 +6,9 @@
     form.ui.form
       .field
         input type="text" name="query" placeholder="Search"
-  .item
-    = link_to 'New Jingle', new_users_jingle_path, class: 'ui primary button'
   - if user_signed_in?
+    .item
+      = link_to 'New Jingle', new_users_jingle_path, class: 'ui primary button'
     .item
       = render 'user_menu', title: current_user.email
     
