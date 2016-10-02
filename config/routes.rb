@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   end
 
   get 'search/jingles'
-  root to: 'jingles#index'
+  root to: 'search#jingles'
 end
