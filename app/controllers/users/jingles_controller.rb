@@ -19,10 +19,10 @@ module Users
       @jingle = current_user.jingles.build(jingle_params)
       respond_to do |format|
         if @jingle.save
-          format.js {
+          format.js do
             set_jingles
             render layout: false
-          }
+          end
           format.html { redirect_to search_jingles_path, notice: 'Jingle was successfully created.' }
         else
           format.js { render layout: false }
@@ -33,10 +33,10 @@ module Users
     def update
       respond_to do |format|
         if @jingle.update(jingle_params)
-          format.js {
+          format.js do
             set_jingles
             render layout: false
-          }
+          end
           format.html { redirect_to search_jingles_path, notice: 'Jingle was successfully created.' }
         else
           format.js { render layout: false }
@@ -53,7 +53,6 @@ module Users
     private
 
     def set_jingles
-      puts 'set'
       @jingles = Jingle.all.includes(:user).page(params[:page])
     end
 

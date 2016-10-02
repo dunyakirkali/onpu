@@ -17,7 +17,7 @@ class Jingle < ApplicationRecord
   validates_attachment_presence :audio
   validates_attachment :audio, content_type: { content_type: ['audio/mpeg', 'audio/mp3'] }
   validates_attachment_presence :cover
-  validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
+  validates_attachment_content_type :cover, content_type: %r{\Aimage\/.*\z}
   validates :user, :title, presence: true
 
   # Filters
