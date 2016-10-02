@@ -36,15 +36,15 @@ RSpec.describe Users::JinglesController, type: :controller do
         expect(assigns(:jingle)).to be_persisted
       end
 
-      xit 'redirects to the created jingle' do
-        post :create, xhr: true, params: { jingle: valid_attributes }
+      it 'redirects to the created jingle' do
+        post :create, params: { jingle: valid_attributes }
         expect(response).to redirect_to(search_jingles_path)
       end
     end
 
     context 'with invalid params' do
       it 'assigns a newly created but unsaved jingle as @jingle' do
-        post :create, xhr: true, params: { jingle: invalid_attributes }
+        post :create, xhr: true, params: { jingle: invalid_attributes }, format: :js
         expect(assigns(:jingle)).to be_a_new(Jingle)
       end
 
