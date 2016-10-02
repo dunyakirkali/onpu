@@ -14,7 +14,7 @@ class Jingle < ApplicationRecord
 
   # Filters
   after_create :create_parasut_product
-  # TODO: (dunyakirkali) update
+  after_create :update_parasut_product
   before_destroy :destroy_parasut_product
 
   # Money
@@ -25,6 +25,11 @@ class Jingle < ApplicationRecord
   def create_parasut_product
     parasut_product = Parasut::Product.create(parasut_product_attrs)
     update_column(:parasut_id, parasut_product.id)
+  end
+
+  def update_parasut_product
+    parasut_product = Parasut::Product.find(parasut_id)
+    parasut_product.update(parasut_product_attrs)
   end
 
   def parasut_product_attrs
