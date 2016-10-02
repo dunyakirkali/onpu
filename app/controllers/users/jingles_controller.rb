@@ -15,14 +15,8 @@ module Users
 
     def create
       @jingle = current_user.jingles.build(jingle_params)
-      if @jingle.save
-        respond_to do |format|
-          format.js { render layout: false }
-          format.html { redirect_to search_jingles_path, notice: 'Jingle was successfully created.' }
-        end
-      else
-        render :new
-      end
+      @jingle.save
+      render layout: false
     end
 
     def update
