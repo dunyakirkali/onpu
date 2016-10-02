@@ -2,5 +2,6 @@
 #= require semantic-ui
 #= require jquery_ujs
 #= require howler
+#= require isotope
 #= require jplayer
-#= require_tree .
+#= require jingle

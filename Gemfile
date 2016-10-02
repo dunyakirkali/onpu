@@ -55,4 +55,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-dropzone'
   gem 'rails-assets-howler'
   gem 'rails-assets-jplayer'
+  gem 'rails-assets-isotope'
 end
