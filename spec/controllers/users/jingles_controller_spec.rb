@@ -5,7 +5,6 @@ RSpec.describe Users::JinglesController, type: :controller do
 
   let(:valid_attributes) { attributes_for(:jingle) }
   let(:invalid_attributes) { attributes_for(:jingle, title: nil) }
-  let(:valid_session) { {} }
 
   describe 'GET #index' do
     it 'assigns all categories as @categories' do
