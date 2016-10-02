@@ -11,7 +11,6 @@ html lang="#{ I18n.locale }"
     = render 'favicon'
   
   body style='height:100%;'
-    - if user_signed_in?
-      = render 'navbar', title: current_user.email
+    = render 'sidebar'
     = yield
-    = render 'footer'
+    
