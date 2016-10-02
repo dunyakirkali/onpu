@@ -7,6 +7,6 @@
 #= require jingle
 
 $ ->
-  $('body').on('click', () ->
+  $('#jingles').on('click', () ->
     $('.ui.sidebar').sidebar('toggle')
   )
