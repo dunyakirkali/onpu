@@ -222,6 +222,10 @@ GEM
     rails-assets-jplayer (2.9.2)
       rails-assets-jquery (>= 1.7.2)
     rails-assets-jquery (3.1.1)
+    rails-controller-testing (1.0.1)
+      actionpack (~> 5.x)
+      actionview (~> 5.x)
+      activesupport (~> 5.x)
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
@@ -370,6 +374,7 @@ DEPENDENCIES
   rails-assets-dropzone!
   rails-assets-howler!
   rails-assets-jplayer!
+  rails-controller-testing
   rollbar (~> 2.12.0)
   rspec-rails (~> 3.0)
   rubocop

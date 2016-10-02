@@ -25,7 +25,9 @@ RSpec.configure do |config|
   config.include AuthHelpers
   config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: :controller
-  
+
+  config.extend ControllerMacros, type: :controller
+
   config.before(:suite) do
     Warden.test_mode!
   end

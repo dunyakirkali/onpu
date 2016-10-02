@@ -47,6 +47,7 @@ group :test do
   gem 'coveralls', require: false
   gem 'webmock'
   gem 'slim_lint'
+  gem 'rails-controller-testing'
 end
 
 source 'https://rails-assets.org' do
