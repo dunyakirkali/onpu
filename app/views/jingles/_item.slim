@@ -1,8 +1,8 @@
 .ui.card
-  .ui.image
+  = link_to item, class: 'image' do
     = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
   .content
-    a.header = link_to item.title, item
+    = link_to item.title, item, class: 'header'
     .meta
       span.price = number_to_currency(item.price, unit: item.price_currency)
     .description
