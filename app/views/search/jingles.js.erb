@@ -1,1 +1,2 @@
 $('#jingles').html('<%= j render(partial: "jingles/item", collection: @jingles) %>');
+$('.pagination').replaceWith('<%= j paginate(@jingles) %>');
