@@ -7,14 +7,18 @@
       span.price = number_to_currency(item.price, unit: item.price_currency)
     .description
       = item.user ? item.user.email : 'N/A'
-  .extra.content
-    - if policy(item).buy?
-      .ui.right.floated.primary.button href="#{buy_jingle_path(item)}"
-        | Buy
+  - if policy(item).buy?
+    .ui.attached.button
+      = link_to buy_jingle_path(item) do
         i.right.chevron.icon
-    - if policy(item).edit?
-      .ui.right.floated.button href="#{edit_users_jingle_path(item)}"
+        | Buy
+  - if policy(item).edit?
+    .ui.bottom.attached.button
+      = link_to edit_users_jingle_path(item) do
+        i.right.chevron.icon
         | Edit
-    - if policy(item).destroy?
-      .ui.right.floated.button href="#{users_jingle_path(item)}"
+  - if policy(item).destroy?
+    .ui.bottom.attached.button
+      = link_to users_jingle_path(item), method: :delete do
+        i.right.chevron.icon
         | Destroy
