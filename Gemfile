@@ -45,6 +45,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.0'
   gem 'brakeman'
   gem 'coveralls', require: false
+  gem 'webmock'
 end
 
 source 'https://rails-assets.org' do
