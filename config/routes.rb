@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/jingles'
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   namespace :users do
     resources :jingles

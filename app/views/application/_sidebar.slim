@@ -3,9 +3,9 @@
     a.ui.logo.icon.image href="/"
       img src="http://static.zerochan.net/Segawa.Onpu.full.1191325.jpg"
   .item
-    form.ui.form
+    = form_for search_jingles_path, method: 'get', html: { class: 'ui form' } do
       .field
-        input type="text" name="query" placeholder="Search"
+        = text_field_tag :query, params[:query], placeholder: 'Search ...'
   - if user_signed_in?
     .item
       = link_to 'New Jingle', new_users_jingle_path, class: 'ui primary button'
