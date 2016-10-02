@@ -4,7 +4,7 @@ module Users
   class JinglesController < ApplicationController
     before_action :set_jingle, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
-    skip_before_action :verify_authenticity_token, only: [:create]
+    skip_before_action :verify_authenticity_token, only: [:create, :update]
 
     def new
       @jingle = current_user.jingles.build
