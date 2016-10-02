@@ -9,8 +9,7 @@ html lang="#{ I18n.locale }"
     - dv = 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0'
     meta content="#{dv}" name='viewport'
     = render 'favicon'
-  
+
   body
     = render 'sidebar'
-    .pusher
-      = yield
+    = yield
