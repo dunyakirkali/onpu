@@ -79,6 +79,11 @@ RSpec.describe Users::JinglesController, type: :controller do
         process :update, method: :put, params: { id: @jingle.to_param, jingle: valid_attributes }
         expect(response).to redirect_to(search_jingles_path)
       end
+
+      it 'assigns jingles if format is js' do
+        process :update, method: :put, params: { id: @jingle.to_param, jingle: valid_attributes }, format: :js
+        expect(assigns(:jingles)).to eq(@user.jingles)
+      end
     end
 
     context 'with invalid params' do
