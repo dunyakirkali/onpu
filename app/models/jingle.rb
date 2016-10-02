@@ -23,7 +23,6 @@ class Jingle < ApplicationRecord
   private
 
   def create_parasut_product
-    puts parasut_product_attrs
     parasut_product = Parasut::Product.create(parasut_product_attrs)
     update_column(:parasut_id, parasut_product.id)
   end
