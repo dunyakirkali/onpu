@@ -38,7 +38,7 @@ module Users
 
     def destroy
       @jingle.destroy
-      redirect_to users_jingles_path, notice: 'Jingle was successfully destroyed.'
+      redirect_to search_jingles_path, notice: 'Jingle was successfully destroyed.'
     end
 
     private

@@ -6,15 +6,6 @@ RSpec.describe Users::JinglesController, type: :controller do
   let(:valid_attributes) { attributes_for(:jingle) }
   let(:invalid_attributes) { attributes_for(:jingle, title: nil) }
 
-  describe 'GET #index' do
-    it 'assigns all jingles as @jingles' do
-      jingle = create(:jingle, valid_attributes)
-      @user.jingles << jingle
-      process :index, method: :get, params: {}
-      expect(assigns(:jingles)).to match_array([jingle])
-    end
-  end
-
   describe 'GET #new' do
     it 'assigns a new jingle as @jingle' do
       process :new, method: :get, params: {}
@@ -121,7 +112,7 @@ RSpec.describe Users::JinglesController, type: :controller do
       jingle = create(:jingle, valid_attributes)
       @user.jingles << jingle
       process :destroy, method: :delete, params: { id: jingle.to_param }
-      expect(response).to redirect_to(users_jingles_path)
+      expect(response).to redirect_to(search_jingles_path)
     end
   end
 end
