@@ -9,17 +9,21 @@ class Jingle < ApplicationRecord
 
   # Relations
   has_attached_file :audio
+  has_attached_file :cover, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
+
   belongs_to :user
 
   # Validations
   validates_attachment_presence :audio
-  validates_attachment :audio, content_type: { content_type: ['audio/mpeg', 'audio/mp3'] }, file_name: { matches: [/mp3\Z/] }
+  validates_attachment :audio, content_type: { content_type: ['audio/mpeg', 'audio/mp3'] }
+  validates_attachment_presence :cover
+  validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
   validates :user, :title, presence: true
 
   # Filters
-  after_create :create_parasut_product
-  after_create :update_parasut_product
-  before_destroy :destroy_parasut_product
+  # after_create :create_parasut_product
+  # after_create :update_parasut_product
+  # before_destroy :destroy_parasut_product
 
   private
 

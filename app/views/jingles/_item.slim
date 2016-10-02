@@ -1,6 +1,6 @@
 .ui.card
   = link_to item, class: 'image' do
-    = image_tag 'http://semantic-ui.com/images/avatar/large/stevie.jpg'
+    = image_tag item.cover.url(:medium)
   .content
     = link_to item.title, item, class: 'header'
     .meta

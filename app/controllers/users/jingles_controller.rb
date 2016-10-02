@@ -47,7 +47,7 @@ module Users
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jingle_params
-      params.require(:jingle).permit(:title, :audio, :price)
+      params.require(:jingle).permit(:title, :audio, :price, :cover)
     end
   end
 end
