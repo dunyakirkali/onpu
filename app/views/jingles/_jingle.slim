@@ -8,7 +8,7 @@
       .icon-pause2.hidden
 
   - if policy(jingle).edit?
-    = link_to 'Edit', edit_users_jingle_path(jingle), class: 'ui button primary'
+    = link_to 'Edit', edit_users_jingle_path(jingle), class: 'ui button primary', remote: true
 
 javascript:
   jingle = new Jingle({

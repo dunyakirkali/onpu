@@ -14,7 +14,7 @@
         | Buy
   - if policy(item).edit?
     .ui.bottom.attached.button
-      = link_to edit_users_jingle_path(item) do
+      = link_to edit_users_jingle_path(item), remote: true do
         i.right.chevron.icon
         | Edit
   - if policy(item).destroy?
