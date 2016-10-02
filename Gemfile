@@ -46,6 +46,7 @@ group :test do
   gem 'brakeman'
   gem 'coveralls', require: false
   gem 'webmock'
+  gem 'slim_lint'
 end
 
 source 'https://rails-assets.org' do
