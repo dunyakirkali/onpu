@@ -11,12 +11,11 @@ html lang="#{ I18n.locale }"
     = render 'favicon'
 
   body
-    .ui.grid
-      .row
-        .three.wide.column
-          = render 'sidebar'
-        .thirteen.wide.column
-          = yield
+    .ui.stackable.two.column.grid
+      .three.wide.column
+        = render 'sidebar'
+      .thirteen.wide.column
+        = yield
     .ui.modal
       i.close.icon
       .content
