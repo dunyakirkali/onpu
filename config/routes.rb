@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   namespace :users do
-    resources :jingles
+    resources :jingles, except: [:index, :show]
   end
 
-  resources :jingles, only: [:show, :index] do
+  resources :jingles, only: :show do
     member do
       get :buy
     end
   end
 
-  root to: 'jingles#index'
+  get 'search/jingles'
+  root to: 'search#jingles'
 end

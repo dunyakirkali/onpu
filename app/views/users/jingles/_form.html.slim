@@ -1,16 +1,23 @@
-= form_for [:users, @jingle], html: { multipart: true, class: 'ui form' } do |f|
-  - if @jingle.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@jingle.errors.count, "error")} prohibited this jingle from being saved:"
-      ul
-        - @jingle.errors.full_messages.each do |message|
-          li = message
-
+.header
+  h3 = "#{@jingle.persisted? ? 'Edit' : 'New'} jingle"
+= form_for [:users, @jingle], html: { multipart: true, class: 'ui form', remote: true } do |f|
+  #error_explanation
   .field
     = f.label :title
     = f.text_field :title
+
   .field
+    = f.label :price
+    .ui.right.labeled.input
+      .ui.label = currency_symbol
+      = f.text_field :price
+      .ui.basic.label .00
+
+  .field
+    = f.label :audio
     = f.file_field :audio
-  = link_to 'Back', users_jingles_path, class: 'ui button'
+
+  .field
+    = f.label :cover
+    = f.file_field :cover
   = f.submit class: 'ui primary button'
-  

@@ -1,0 +1,4 @@
+tr:
+  devise:
+    omniauth_callbacks:
+      success: Başarı
