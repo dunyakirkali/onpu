@@ -33,6 +33,7 @@ group :development, :test do
   gem 'bundler-audit'
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.7.0'
+  gem 'launchy'
 end
 
 group :development do
@@ -53,12 +54,12 @@ group :test do
   gem 'rails-controller-testing'
   gem 'pundit-matchers', '~> 1.1.0'
   gem 'capybara'
+  gem 'poltergeist'
 end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-dropzone'
   gem 'rails-assets-howler'
   gem 'rails-assets-jplayer'
-  gem 'rails-assets-isotope'
   gem 'rails-assets-normalize-scss'
 end
