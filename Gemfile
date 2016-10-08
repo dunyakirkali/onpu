@@ -26,6 +26,7 @@ gem 'money-rails'
 gem 'kaminari'
 gem 'parasut_rails'
 gem 'bourbon', '~> 4.2.7'
+gem 'neat', '~> 1.8.0'
 
 group :development, :test do
   gem 'faker'
