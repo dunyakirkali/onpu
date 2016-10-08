@@ -13,7 +13,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'rack-attack', '~> 5.0.1'
 gem 'sidekiq', '~> 4.1.2'
 gem 'pundit', '~> 1.1.0'
-gem 'semantic-ui-sass', '~> 2.2.4'
 gem 'slim-rails', '~> 3.1.0'
 gem 'devise', '~>4.2.0'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
@@ -25,12 +24,15 @@ gem 'icomoon-rails', '~> 0.1.0'
 gem 'money-rails'
 gem 'kaminari'
 gem 'parasut_rails'
+gem 'bourbon', '~> 4.2.7'
+gem 'neat', '~> 1.8.0'
 
 group :development, :test do
   gem 'faker'
   gem 'bundler-audit'
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.7.0'
+  gem 'launchy'
 end
 
 group :development do
@@ -50,11 +52,14 @@ group :test do
   gem 'slim_lint'
   gem 'rails-controller-testing'
   gem 'pundit-matchers', '~> 1.1.0'
+  gem 'capybara'
+  gem 'poltergeist'
 end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-dropzone'
   gem 'rails-assets-howler'
   gem 'rails-assets-jplayer'
-  gem 'rails-assets-isotope'
+  gem 'rails-assets-normalize-scss'
+  gem 'rails-assets-animate-css'
 end

@@ -1,4 +1,78 @@
-//= require_self
-
+@import 'normalize-scss';
+@import 'bourbon';
+@import 'neat';
 @import 'icomoon';
-@import 'semantic-ui';
+@import 'animate-css';
+@import 'sidebar';
+@import 'content';
+
+$mobile: new-breakpoint(max-width 992px 12);
+
+html, body {
+  height: 100%;
+}
+
+#sidebar{
+  @include span-columns(1);
+  @include media($mobile) {
+    @include span-columns(3);
+  }
+  padding:.3em;
+  ul{
+    margin:0;
+    padding:0;
+    li{
+      list-style-type:none;
+    }
+  }
+  position:fixed;
+  ul{
+    li{
+      opacity: 0;
+      &:first-child{
+        opacity: 1;
+      }
+    }
+  }
+  &.visible{
+    @include span-columns(3);
+    @include media($mobile) {
+      @include span-columns(9);
+    }
+    ul{
+      opacity: 1;
+      display:block !important;
+      li{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.container{
+  @include span-columns(11);
+  @include shift(1);
+  #jingles{
+    .card{
+      @include span-columns(4 of 12);
+      @include omega(3n);
+      @include media($mobile) {
+        @include span-columns(10 of 12);
+        @include shift(1);
+      }
+    }
+  }
+  .pagination{
+    @include outer-container;
+    @include span-columns(10 of 12);
+  }
+}
+
+.black{
+  background-color:black;
+}
+
+.white-text{ color: white; }
+
+img{ max-width:100%; }
+.hide{ display: none; }

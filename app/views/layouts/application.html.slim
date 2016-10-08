@@ -11,10 +11,7 @@ html lang="#{ I18n.locale }"
     = render 'favicon'
 
   body
-    = render 'sidebar'
-    .pusher
+    #sidebar.black
+      = render 'sidebar'
+    .container
       = yield
-    
-    .ui.modal
-      i.close.icon
-      .content
