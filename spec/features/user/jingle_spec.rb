@@ -5,7 +5,7 @@ RSpec.describe 'User', type: :feature, js: true do
 
   context 'w/o a jingle' do
     describe 'can creaete a new jingle' do
-      it 'via sidebar' do
+      xit 'via sidebar' do
         user = create(:user)
         login_as(user)
         visit root_path
