@@ -63,4 +63,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-jplayer'
   gem 'rails-assets-normalize-scss'
   gem 'rails-assets-animate-css'
+  gem 'rails-assets-notifyjs'
 end
