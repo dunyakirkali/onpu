@@ -13,8 +13,11 @@ html, body {
 }
 
 #sidebar{
-  @include span-columns(1);
-  position:absolute;
+  @include span-columns(3);
+  @include media($mobile) {
+    @include span-columns(1);
+  }
+  position:fixed;
   &.visible{
     @include span-columns(3);
     ul{
