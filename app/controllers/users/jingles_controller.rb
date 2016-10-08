@@ -48,7 +48,7 @@ module Users
     def destroy
       @jingle.destroy
       set_jingles
-      redirect_to search_jingles_path, notice: 'Jingle was successfully destroyed.'
+      render layout: false
     end
 
     private
