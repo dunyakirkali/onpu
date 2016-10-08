@@ -1,4 +1,4 @@
 #sidebar{
   height: 100%;
-  @include transition(opacity 0.25s ease-in 0s, width 0.25s ease-in 0s);
+  @include transition(visibility 0s, opacity 0.25s linear, width 0.25s ease-in 0s);
 }
