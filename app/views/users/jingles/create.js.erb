@@ -1,13 +1,13 @@
 $('#error_explanation ul').html('');
 <% if @jingle.errors.any? %>
-  $('.ui.modal > .content').html('<%= j render "form" %>');
-  $('.ui.modal > .content').find('#error_explanation').html($('<ul>'));
+  $('.modal-content').html('<%= j render "form" %>');
+  $('.modal-content').find('#error_explanation').html($('<ul>'));
   <% @jingle.errors.full_messages.each do |message| %>
     $('#error_explanation ul').append('<li><%== message%></li>');
   <% end %>
-  $(".ui.modal").modal("show");
+  $(".modal-state").prop('checked', true);
 <% else %>
-  $('.ui.modal').modal("close");
+  $(".modal-state").prop('checked', false);
   $('#jingles').html('<%= j render(partial: "jingles/item", collection: @jingles) %>');
   $('.pagination').replaceWith('<%= j paginate(@jingles) %>');
 <% end %>
