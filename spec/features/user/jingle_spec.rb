@@ -1,22 +1,20 @@
 require 'rails_helper'
-require 'pry'
+
 RSpec.describe 'User', type: :feature, js: true do
   let(:jingle) { build(:jingle) }
 
-  before :each do
-    login_as(user)
-  end
-
   context 'w/o a jingle' do
-    let(:user) { create(:user) }
-
     describe 'can creaete a new jingle' do
       it 'via sidebar' do
+        user = create(:user)
+        login_as(user)
         visit root_path
         find('#sidebar').click
         click_on 'New Jingle'
         fill_in 'jingle_title', with: jingle.title
         fill_in 'jingle_price', with: jingle.price
+        attach_file 'jingle_audio', Rails.root.join('spec/fixtures/audio.mp3')
+        attach_file 'jingle_cover', Rails.root.join('spec/fixtures/cover.jpg')
         click_on 'Create Jingle'
         expect(page).to have_content('Jingle was successfully created.')
       end
@@ -24,19 +22,20 @@ RSpec.describe 'User', type: :feature, js: true do
   end
 
   context 'w a jingle' do
-    let(:user) { create(:user, :with_jingels) }
-
     describe 'can delete a jingle' do
-      fit 'via content' do
+      it 'via content' do
+        user = create(:user, :with_jingels)
+        login_as(user)
         visit root_path
-        save_and_open_page
-        click_on 'Delete'
+        click_on 'Destroy'
         expect(page).to have_content('Jingle was successfully destroyed.')
       end
     end
 
     describe 'can edit a jingle' do
       it 'via content' do
+        user = create(:user, :with_jingels)
+        login_as(user)
         visit root_path
         click_on 'Edit'
         fill_in 'jingle_title', with: jingle.title
