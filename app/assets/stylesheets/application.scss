@@ -31,7 +31,7 @@ html, body {
   &.visible{
     @include span-columns(3);
     @include media($mobile) {
-      @include span-columns(11);
+      @include span-columns(9);
     }
     ul{
       opacity: 1;
