@@ -2,10 +2,7 @@ ul.white-text
   li
     = link_to root_path, class: 'logo icon image' do
       = image_tag 'note.jpg', class: 'ui medium rounded image'
-  li
-    = form_for search_jingles_path, url: search_jingles_path, method: 'get', remote: true do
-      = text_field_tag :query, params[:query], placeholder: 'Search ...', onchange: '$(this).closest("form").submit();'
-  
+  li = render 'search_form'
   - if user_signed_in?
     li = link_to 'New Jingle', new_users_jingle_path, remote: true
     li = render 'user_menu', title: current_user.email

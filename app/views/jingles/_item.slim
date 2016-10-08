@@ -6,7 +6,7 @@
   .jingle-content
     span.price = number_to_currency(item.price, unit: item.price_currency)
   .jingle-footeer
-    .nav.actions
+    nav.actions
       - if policy(item).buy?
         = link_to buy_jingle_path(item, page: params[:page]), remote: true do
           i.right.chevron.icon
