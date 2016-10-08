@@ -41,8 +41,8 @@ html, body {
       @include span-columns(4 of 12);
       @include omega();
       @include media($mobile) {
-        @include span-columns(6 of 12);
-        @include omega()
+        @include span-columns(10 of 12);
+        @include shift(1);
       }
     }
   }
