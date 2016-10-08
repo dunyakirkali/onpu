@@ -18,12 +18,16 @@ html, body {
     @include span-columns(3);
   }
   position:fixed;
+  ul{
+    opacity: 0;
+  }
   &.visible{
     @include span-columns(3);
     @include media($mobile) {
       @include span-columns(11);
     }
     ul{
+      opacity: 1;
       display:block !important;
     }
   }

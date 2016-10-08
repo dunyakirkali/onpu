@@ -19,18 +19,18 @@ class @Sidebar
   open: () ->
     return if @animating
     @animating = true
-    $('#sidebar').removeClass('slideOutRight').addClass('slideInLeft').addClass('visible')
-    $('#sidebar').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () =>
-      $('#sidebar').removeClass('slideInLeft')
-      @animating = false
+    $('#sidebar').addClass('visible')#.removeClass('slideOutRight').addClass('slideInLeft')
+    # $('#sidebar').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () =>
+    #   $('#sidebar').removeClass('slideInLeft')
+    @animating = false
 
   close: () ->
     return if @animating
     @animating = true
-    $('#sidebar').removeClass('slideInLeft').addClass('slideOutLeft')
-    $('#sidebar').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () =>
-      $('#sidebar').removeClass('visible').removeClass('slideOutLeft')
-      @animating = false
+    $('#sidebar').removeClass('slideInLeft')#.addClass('slideOutLeft')
+    # $('#sidebar').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () =>
+    $('#sidebar').removeClass('visible').removeClass('slideOutLeft')
+    @animating = false
 
   stopPropagation: () ->
     if !e

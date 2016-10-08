@@ -1,5 +1,4 @@
 #sidebar{
   height: 100%;
-  @include animation-duration(1s);
-  @include animation-duration(0.5s);
+  @include transition(opacity 0.5s ease-in 0s, width 0.5s ease-in 0s);
 }
