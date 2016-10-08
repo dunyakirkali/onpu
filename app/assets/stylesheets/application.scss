@@ -17,6 +17,13 @@ html, body {
   @include media($mobile) {
     @include span-columns(3);
   }
+  ul{
+    margin:0;
+    padding:0;
+    li{
+      list-style-type:none;
+    }
+  }
   position:fixed;
   ul{
     opacity: 0;
