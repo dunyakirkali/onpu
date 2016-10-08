@@ -35,11 +35,6 @@ RSpec.describe Users::JinglesController, type: :controller do
         expect(assigns(:jingle)).to be_a(Jingle)
         expect(assigns(:jingle)).to be_persisted
       end
-
-      it 'redirects to the created jingle' do
-        post :create, params: { jingle: valid_attributes }
-        expect(response).to redirect_to(search_jingles_path)
-      end
     end
 
     context 'with invalid params' do
@@ -65,23 +60,23 @@ RSpec.describe Users::JinglesController, type: :controller do
       end
 
       it 'updates the requested jingle' do
-        process :update, method: :put, params: { id: @jingle.to_param, jingle: new_attributes }
+        put :update, xhr: true, params: { id: @jingle.to_param, jingle: new_attributes }
         @jingle.reload
         expect(@jingle.title).to eq(new_attributes[:title])
       end
 
       it 'assigns the requested jingle as @jingle' do
-        process :update, method: :put, params: { id: @jingle.to_param, jingle: valid_attributes }
+        put :update, xhr: true, params: { id: @jingle.to_param, jingle: valid_attributes }
         expect(assigns(:jingle)).to eq(@jingle)
       end
 
       it 'redirects to the jingle' do
-        process :update, method: :put, params: { id: @jingle.to_param, jingle: valid_attributes }
-        expect(response).to redirect_to(search_jingles_path)
+        put :update, xhr: true, params: { id: @jingle.to_param, jingle: valid_attributes }
+        expect(response).to render_template('users/jingles/update')
       end
 
       it 'assigns jingles if format is js' do
-        process :update, method: :put, params: { id: @jingle.to_param, jingle: valid_attributes }, format: :js
+        put :update, xhr: true, params: { id: @jingle.to_param, jingle: valid_attributes }
         expect(assigns(:jingles)).to eq(@user.jingles)
       end
     end
@@ -109,15 +104,15 @@ RSpec.describe Users::JinglesController, type: :controller do
       jingle = create(:jingle, valid_attributes)
       @user.jingles << jingle
       expect do
-        process :destroy, method: :delete, params: { id: jingle.to_param }
+        delete :destroy, xhr: true, params: { id: jingle.to_param }
       end.to change(Jingle, :count).by(-1)
     end
 
     it 'redirects to the tags list' do
       jingle = create(:jingle, valid_attributes)
       @user.jingles << jingle
-      process :destroy, method: :delete, params: { id: jingle.to_param }
-      expect(response).to redirect_to(search_jingles_path)
+      delete :destroy, xhr: true, params: { id: jingle.to_param }
+      expect(response).to render_template('users/jingles/destroy')
     end
   end
 end
