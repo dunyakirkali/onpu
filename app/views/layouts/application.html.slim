@@ -11,9 +11,10 @@ html lang="#{ I18n.locale }"
     = render 'favicon'
 
   body
-    main id="#{controller_name}-#{action_name}"
-      #sidebar
-        = render 'sidebar'
-      .content
-        = yield
+
+    #sidebar
+      = render 'sidebar'
+    .container
+      header
+      = yield
     / = render 'footer'
