@@ -1,10 +1,27 @@
 class @Sidebar
   constructor: (options = {}) ->
-    button = options.button
-    target = options.target
-    $('body').on 'click', button, ->
-      if $(target).hasClass('visible')
-        $(target).removeClass('visible')
-      else
+    $('body').on 'click', =>
+      @close()
 
-        $(target).addClass('visible')
+    $('#sidebar').on 'click', (event) =>
+      @stopPropagation()
+      @toggle()
+
+  toggle: () ->
+    if $('#sidebar').hasClass('visible')
+      @close()
+    else
+      @open()
+
+  open: () ->
+    $('#sidebar').addClass('visible')
+
+  close: () ->
+    $('#sidebar').removeClass('visible')
+
+  stopPropagation: () ->
+    if !e
+      e = window.event
+    e.cancelBubble = true
+    if e.stopPropagation
+      e.stopPropagation()
