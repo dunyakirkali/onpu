@@ -11,34 +11,33 @@ $mobile: new-breakpoint(max-width 1024px 4);
 html, body {
   height: 100%;
 }
-main {
-  // @include outer-container;
-  height: 100%;
 
-  #sidebar{
-    @include span-columns(1);
-    position:absolute;
-    &.visible{
-      @include span-columns(3);
-    }
-  }
-
-  .content{
-    #jingles{
-      .card{
-        @include span-columns(3 of 12);
-
-        @include media($mobile) {
-          @include span-columns(10 of 12);
-          @include shift(1);
-        }
-      }
-    }
-    .pagination{
-      @include outer-container;
-      @include span-columns(10 of 12);
-    }
+#sidebar{
+  @include span-columns(1);
+  position:absolute;
+  &.visible{
+    @include span-columns(3);
   }
 }
+
+.container{
+  @include outer-container;
+  #jingles{
+    @include span-columns(12);
+    .card{
+      @include span-columns(3 of 12);
+
+      @include media($mobile) {
+        @include span-columns(10 of 12);
+        @include shift(1);
+      }
+    }
+  }
+  .pagination{
+    @include outer-container;
+    @include span-columns(10 of 12);
+  }
+}
+
 
 img{ max-width:100%; }
