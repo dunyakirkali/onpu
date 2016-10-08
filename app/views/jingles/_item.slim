@@ -1,7 +1,7 @@
-.li.card
+.card
   = link_to item, class: 'image' do
     = image_tag item.cover.url(:medium)
-  .content
+  .title
     = link_to item.title, item, class: 'header'
     .meta
       span.price = number_to_currency(item.price, unit: item.price_currency)

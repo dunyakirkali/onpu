@@ -13,17 +13,21 @@ main {
     }
     @include span-columns(9);
     #jingles{
-      @include outer-container;
-      $mobile: new-breakpoint(max-width 992px 4);
-      $tablet: new-breakpoint(max-width 1280px 4);
+      $mobile: new-breakpoint(max-width 767px 4);
+      $tablet: new-breakpoint(max-width 1024px 4);
       .card{
+        @include span-columns(3 of 9);
         @include media($mobile) {
-          @include span-columns(6);
-          @include omega(2n);
+          @include span-columns(8 of 9);
         }
-        @include omega(3n);
-        @include span-columns(4);
+        @include media($tablet) {
+          @include span-columns(4 of 9);
+        }
       }
+    }
+    .pagination{
+      @include outer-container;
+      @include span-columns(9 of 9);
     }
   }
 }
