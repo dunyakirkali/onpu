@@ -252,6 +252,7 @@ GEM
     rails-assets-masonry (4.1.1)
       rails-assets-get-size (>= 2.0.2, < 3)
       rails-assets-outlayer (>= 2.1.0, < 3)
+    rails-assets-normalize-scss (3.0.3)
     rails-assets-outlayer (2.1.0)
       rails-assets-ev-emitter (>= 1.0.0, < 2)
       rails-assets-fizzy-ui-utils (>= 2.0.0, < 3)
@@ -416,6 +417,7 @@ DEPENDENCIES
   rails-assets-howler!
   rails-assets-isotope!
   rails-assets-jplayer!
+  rails-assets-normalize-scss!
   rails-controller-testing
   rollbar (~> 2.12.0)
   rspec-rails (~> 3.0)

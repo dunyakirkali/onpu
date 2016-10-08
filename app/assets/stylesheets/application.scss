@@ -1,11 +1,19 @@
+@import 'normalize-scss';
 @import 'bourbon';
 @import 'neat';
 @import 'icomoon';
 
+@import 'sidebar';
+@import 'content';
+
 $mobile: new-breakpoint(max-width 1024px 4);
 
+html, body {
+  height: 100%;
+}
 main {
-  @include outer-container;
+  // @include outer-container;
+  height: 100%;
 
   #sidebar{
     @include span-columns(1);

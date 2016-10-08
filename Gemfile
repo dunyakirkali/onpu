@@ -60,4 +60,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-howler'
   gem 'rails-assets-jplayer'
   gem 'rails-assets-isotope'
+  gem 'rails-assets-normalize-scss'
 end
