@@ -8,17 +8,17 @@
     .description
       = item.user ? item.user.email : 'N/A'
   - if policy(item).buy?
-    .ui.attached.button
+    .button
       = link_to buy_jingle_path(item) do
         i.right.chevron.icon
         | Buy
   - if policy(item).edit?
-    .ui.bottom.attached.button
+    .button
       = link_to edit_users_jingle_path(item), remote: true do
         i.right.chevron.icon
         | Edit
   - if policy(item).destroy?
-    .ui.bottom.attached.button
+    .button
       = link_to users_jingle_path(item), method: :delete, data: { confirm: "Are you sure?" } do
         i.right.chevron.icon
         | Destroy
