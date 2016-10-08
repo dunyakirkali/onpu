@@ -31,10 +31,6 @@ html, body {
 
 .container{
   @include outer-container;
-  width:70%;
-  @include media($mobile) {
-    width:100%;
-  }
   #jingles{
     @include span-columns(12);
     .card{
