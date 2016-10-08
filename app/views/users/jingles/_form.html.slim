@@ -1,6 +1,7 @@
 .header
   h3 = "#{@jingle.persisted? ? 'Edit' : 'New'} jingle"
-= form_for [:users, @jingle], html: { multipart: true, class: 'ui form', remote: true } do |f|
+
+= form_for [:users, @jingle], url: @jingle.new_record? ? users_jingles_path(page: params[:page]) : users_jingle_path(@jingle, page: params[:page]), html: { multipart: true, class: 'ui form', remote: true } do |f|
   #error_explanation
   .field
     = f.label :title
@@ -8,10 +9,8 @@
 
   .field
     = f.label :price
-    .ui.right.labeled.input
-      .ui.label = currency_symbol
-      = f.text_field :price
-      .ui.basic.label .00
+    = currency_symbol
+    = f.text_field :price
 
   .field
     = f.label :audio
@@ -20,4 +19,4 @@
   .field
     = f.label :cover
     = f.file_field :cover
-  = f.submit class: 'ui primary button'
+  = f.submit
