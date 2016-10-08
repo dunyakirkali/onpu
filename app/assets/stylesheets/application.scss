@@ -35,7 +35,7 @@ html, body {
     @include span-columns(12);
     .card{
       @include span-columns(4 of 12);
-      @include omega();
+      @include omega(3n);
       @include media($mobile) {
         @include span-columns(10 of 12);
         @include shift(1);
