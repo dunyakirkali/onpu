@@ -1,11 +1,13 @@
 @import 'normalize-scss';
 @import 'bourbon';
+@import 'base/base';
 @import 'neat';
 @import 'icomoon';
 @import 'animate-css';
 @import 'mixins';
 @import 'sidebar';
 @import 'content';
+@import 'jingles';
 @import 'modal';
 
 $mobile: new-breakpoint(max-width 992px 12);
