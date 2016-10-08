@@ -37,6 +37,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rb-readline'
   gem 'pry-rails'
   gem 'rubocop'
   gem 'binding_of_caller'
