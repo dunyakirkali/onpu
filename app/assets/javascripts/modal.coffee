@@ -1,6 +1,5 @@
 $ ->
   $('#modal-1').on 'change', ->
-    console.log('dd')
     if $(this).is(':checked')
       $('body').addClass 'modal-open'
     else
