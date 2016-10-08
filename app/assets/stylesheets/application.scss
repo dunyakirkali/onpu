@@ -1,3 +1,27 @@
 @import 'bourbon';
 @import 'neat';
 @import 'icomoon';
+
+main {
+  .sidebar{
+    @include span-columns(3);
+  }
+  .content{
+    img{
+      max-width:100%;
+    }
+    @include span-columns(9);
+    #jingles{
+      $mobile: new-breakpoint(max-width 992px 4);
+      $tablet: new-breakpoint(max-width 1280px 4);
+      .card{
+        @include media($mobile) {
+          @include span-columns(6);
+          @include omega(2n);
+        }
+        @include omega(3n);
+        @include span-columns(4);
+      }
+    }
+  }
+}
