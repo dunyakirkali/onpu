@@ -6,6 +6,7 @@
 #= require jingle
 #= require sidebar
 #= require modal
+#= require dropzone
 
 $ ->
   new Sidebar()
