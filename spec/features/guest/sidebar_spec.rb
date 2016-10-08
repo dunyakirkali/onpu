@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Guest', type: :feature do
+RSpec.describe 'Guest', type: :feature, js: true do
   before :each do
     visit root_path
   end
@@ -25,7 +25,9 @@ RSpec.describe 'Guest', type: :feature do
     context 'when not visible' do
       it 'via the logo' do
         find('#sidebar').click
-        expect(page).to have_css('#sidebar.visible')
+        within '#sidebar' do
+          expect(page).to have_css('.visible')
+        end
       end
     end
   end

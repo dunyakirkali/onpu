@@ -62,4 +62,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-howler'
   gem 'rails-assets-jplayer'
   gem 'rails-assets-normalize-scss'
+  gem 'rails-assets-animate-css'
 end
