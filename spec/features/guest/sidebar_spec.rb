@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Guest', type: :feature do
+  before :each do
+    visit root_path
+  end
+
   describe 'can toggle sidebar' do
     context 'when already visible' do
       it 'via the logo' do
@@ -17,7 +21,7 @@ RSpec.describe 'Guest', type: :feature do
         expect(page).not_to have_css('#sidebar.visible')
       end
     end
-    
+
     context 'when not visible' do
       it 'via the logo' do
         within '#sidebar' do
