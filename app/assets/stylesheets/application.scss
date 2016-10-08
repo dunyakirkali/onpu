@@ -17,6 +17,9 @@ html, body {
   position:absolute;
   &.visible{
     @include span-columns(3);
+    ul{
+      display:block !important;
+    }
   }
 }
 
@@ -41,3 +44,4 @@ html, body {
 
 
 img{ max-width:100%; }
+.hide{ display: none; }
