@@ -6,6 +6,7 @@
 @import 'mixins';
 @import 'sidebar';
 @import 'content';
+@import 'modal';
 
 $mobile: new-breakpoint(max-width 992px 12);
 

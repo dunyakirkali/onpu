@@ -4,6 +4,7 @@
 #= require jplayer
 #= require jingle
 #= require sidebar
+#= require modal
 
 $ ->
   new Sidebar()
