@@ -13,8 +13,8 @@ html lang="#{ I18n.locale }"
   body
     header
     main id="#{controller_name}-#{action_name}"
+      = render 'sidebar'
       .sidebar
-        = render 'sidebar'
       .content
         = yield
     / = render 'footer'
