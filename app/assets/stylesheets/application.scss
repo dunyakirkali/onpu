@@ -28,9 +28,9 @@ html, body {
   position:fixed;
   ul{
     li{
-      opacity: 0.0;
+      display: none;
       &:first-child{
-        opacity: 1.0;
+        display: block;
       }
     }
   }
@@ -40,10 +40,9 @@ html, body {
       @include span-columns(9);
     }
     ul{
-      opacity: 1;
-      display:block !important;
+      display: block;
       li{
-        opacity: 1;
+        display: block;
       }
     }
   }
