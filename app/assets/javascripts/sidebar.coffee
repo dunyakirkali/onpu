@@ -1,15 +1,11 @@
 class @Sidebar
   constructor: (options = {}) ->
-    $('body').on 'click', =>
-      if $('#sidebar').hasClass('visible')
-        @close()
-
-    $('#sidebar').on 'click', (event) =>
-      @stopPropagation()
-      @toggle()
-
-    $('#sidebar a, #sidebar input').on 'click', (event) =>
-      @stopPropagation()
+    $('body').on 'click', (event) =>
+      if event.target.id == 'sidebar'
+        @toggle()
+      else
+        if $('#sidebar').hasClass('visible')
+          @close()
 
   toggle: () ->
     if $('#sidebar').hasClass('visible')
