@@ -7,6 +7,7 @@ $('#error_explanation ul').html('');
   <% end %>
   $(".modal-state").prop('checked', true);
 <% else %>
+  $.notify('Jingle was successfully updated.', 'success');
   $(".modal-state").prop('checked', false);
   $('#jingles').html('<%= j render(partial: "jingles/item", collection: @jingles) %>');
   $('.pagination').replaceWith('<%= j paginate(@jingles, remote: true) %>');
