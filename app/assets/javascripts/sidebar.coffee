@@ -1,6 +1,5 @@
 class @Sidebar
   constructor: (options = {}) ->
-    @animating = false
     $('body').on 'click', =>
       if $('#sidebar').hasClass('visible')
         @close()
@@ -9,28 +8,20 @@ class @Sidebar
       @stopPropagation()
       @toggle()
 
+    $('#sidebar a, #sidebar input').on 'click', (event) =>
+      @stopPropagation()
+
   toggle: () ->
-    return if @animating
     if $('#sidebar').hasClass('visible')
       @close()
     else
       @open()
 
   open: () ->
-    return if @animating
-    @animating = true
-    $('#sidebar').addClass('visible')#.removeClass('slideOutRight').addClass('slideInLeft')
-    # $('#sidebar').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () =>
-    #   $('#sidebar').removeClass('slideInLeft')
-    @animating = false
+    $('#sidebar').addClass('visible')
 
   close: () ->
-    return if @animating
-    @animating = true
-    $('#sidebar').removeClass('slideInLeft')#.addClass('slideOutLeft')
-    # $('#sidebar').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () =>
-    $('#sidebar').removeClass('visible').removeClass('slideOutLeft')
-    @animating = false
+    $('#sidebar').removeClass('visible')
 
   stopPropagation: () ->
     if !e
