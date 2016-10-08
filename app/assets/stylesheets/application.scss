@@ -6,7 +6,7 @@ $mobile: new-breakpoint(max-width 1024px 4);
 
 main {
   @include outer-container;
-  .sidebar{
+  .sidebar-link
     @include span-columns(1);
   }
   #sidebar{
