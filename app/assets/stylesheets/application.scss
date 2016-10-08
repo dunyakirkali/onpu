@@ -50,10 +50,9 @@ html, body {
 }
 
 .container{
-  @include outer-container;
+  @include span-columns(11);
+  @include shift(1);
   #jingles{
-    @include span-columns(11);
-    @include shift(1);
     .card{
       @include span-columns(4 of 12);
       @include omega(3n);
