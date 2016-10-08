@@ -14,11 +14,14 @@ html, body {
 
 #sidebar{
   @include span-columns(1);
+  @include media($mobile) {
+    @include span-columns(3);
+  }
   position:fixed;
   &.visible{
     @include span-columns(3);
     @include media($mobile) {
-      @include span-columns(1);
+      @include span-columns(11);
     }
     ul{
       display:block !important;
@@ -28,10 +31,14 @@ html, body {
 
 .container{
   @include outer-container;
+  width:70%;
+  @include media($mobile) {
+    width:100%;
+  }
   #jingles{
     @include span-columns(12);
     .card{
-      @include span-columns(3 of 12);
+      @include span-columns(4 of 12);
       @include omega();
       @include media($mobile) {
         @include span-columns(10 of 12);
