@@ -9,6 +9,10 @@ main {
   .sidebar{
     @include span-columns(1);
   }
+  #sidebar{
+    @include span-columns(3);
+    background: #ccc;
+  }
   .content{
     @include span-columns(11);
     #jingles{
@@ -28,6 +32,6 @@ main {
   }
 }
 
-.hide{ display:none; }
+.hide{ display:none !important; }
 
 img{ max-width:100%; }
