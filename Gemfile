@@ -25,6 +25,7 @@ gem 'icomoon-rails', '~> 0.1.0'
 gem 'money-rails'
 gem 'kaminari'
 gem 'parasut_rails'
+gem 'bourbon', '~> 4.2.7'
 
 group :development, :test do
   gem 'faker'
