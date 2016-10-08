@@ -21,19 +21,30 @@ class Jingle < ApplicationRecord
   validates :user, :title, presence: true
 
   # Filters
-  # after_create :create_parasut_product
-  # after_create :update_parasut_product
-  # before_destroy :destroy_parasut_product
+  after_create :create_parasut_product
+  after_create :update_parasut_product
+  before_destroy :destroy_parasut_product
 
   private
 
   def create_parasut_product
     parasut_product = Parasut::Product.create(parasut_product_attrs)
     update_column(:parasut_id, parasut_product.id)
+  rescue
+    puts '~~~ Error'
   end
 
   def update_parasut_product
     Parasut::Product.save_existing(parasut_id, parasut_product_attrs)
+  rescue
+    puts '~~~ Error'
+  end
+
+  def destroy_parasut_product
+    parasut_product = Parasut::Product.find(parasut_id)
+    parasut_product.destroy
+  rescue
+    puts '~~~ Error'
   end
 
   def parasut_product_attrs
@@ -55,10 +66,5 @@ class Jingle < ApplicationRecord
       bg_color: '5cbc68',
       text_color: 'f3f2f2'
     }
-  end
-
-  def destroy_parasut_product
-    parasut_product = Parasut::Product.find(parasut_id)
-    parasut_product.destroy
   end
 end
