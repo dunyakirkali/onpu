@@ -6,12 +6,12 @@ $mobile: new-breakpoint(max-width 1024px 4);
 
 main {
   @include outer-container;
-  .sidebar-link{
+
+  #sidebar{
     @include span-columns(1);
   }
-  #sidebar{
+  #sidebar.visible{
     @include span-columns(3);
-    background: #ccc;
   }
   .content{
     @include span-columns(11);
@@ -31,7 +31,5 @@ main {
     }
   }
 }
-
-.hide{ display:none !important; }
 
 img{ max-width:100%; }
