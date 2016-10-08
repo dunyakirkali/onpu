@@ -6,7 +6,7 @@
 @import 'sidebar';
 @import 'content';
 
-$mobile: new-breakpoint(max-width 992px 4);
+$mobile: new-breakpoint(max-width 992px 12);
 
 html, body {
   height: 100%;
