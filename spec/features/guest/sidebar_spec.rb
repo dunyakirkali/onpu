@@ -6,28 +6,30 @@ RSpec.describe 'Guest', type: :feature, js: true do
   end
 
   describe 'can toggle sidebar' do
-    before :each do
-      find('#sidebar').click
-    end
-
     context 'when already visible' do
+      before :each do
+        find('#sidebar').click
+      end
+
       it 'via the bar' do
         find('#sidebar').click
-        expect(page).not_to have_css('#sidebar.visible')
+        within '#sidebar' do
+          expect(page).not_to have_css('.visible')
+        end
       end
 
       it 'via body' do
         find('body').click
-        expect(page).not_to have_css('#sidebar.visible')
+        within '#sidebar' do
+          expect(page).not_to have_css('.visible')
+        end
       end
     end
 
     context 'when not visible' do
       it 'via the logo' do
         find('#sidebar').click
-        within '#sidebar' do
-          expect(page).to have_css('.visible')
-        end
+        expect(page).to have_css('#sidebar.visible')
       end
     end
   end
