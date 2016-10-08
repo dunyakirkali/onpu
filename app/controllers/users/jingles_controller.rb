@@ -38,7 +38,7 @@ module Users
             set_jingles
             render layout: false
           end
-          format.html { redirect_to search_jingles_path, notice: 'Jingle was successfully created.' }
+          format.html { redirect_to search_jingles_path, notice: 'Jingle was successfully updated.' }
         else
           format.js { render layout: false }
         end
