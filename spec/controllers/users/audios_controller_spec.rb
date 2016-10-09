@@ -3,26 +3,41 @@ require 'rails_helper'
 RSpec.describe Users::AudiosController, type: :controller do
   login_user
 
-  let(:valid_attributes) { attributes_for(:jingle) }
-  let(:invalid_attributes) { attributes_for(:jingle, title: nil) }
-  let(:jingle) { create(:jingle) }
+  let(:valid_attributes) { attributes_for(:audio) }
+  let(:invalid_attributes) { attributes_for(:audio, file: nil) }
 
   describe 'GET #new' do
-    it 'assigns a new audio as @audio' do
+    let(:jingle) { create(:jingle) }
+
+    before :each do
       get :new, xhr: true, params: { jingle_id: jingle.id }
+    end
+
+    it 'assigns the jingle as @jingle' do
+      expect(assigns(:jingle)).to eq(jingle)
+    end
+
+    it 'assigns a new audio as @audio' do
       expect(assigns(:audio)).to be_a_new(Audio)
     end
   end
-  #
-  # describe 'GET #edit' do
-  #   it 'assigns the requested jingle as @jingle' do
-  #     jingle = create(:jingle, valid_attributes)
-  #     @user.jingles << jingle
-  #     process :edit, method: :get, params: { id: jingle.to_param }, format: :js
-  #     expect(assigns(:jingle)).to eq(jingle)
-  #   end
-  # end
-  #
+
+  describe 'GET #edit' do
+    let(:jingle) { create(:jingle, user: @user) }
+
+    before :each do
+      process :edit, method: :get, params: { jingle_id: jingle.to_param }, format: :js
+    end
+
+    it 'assigns the jingle as @jingle' do
+      expect(assigns(:jingle)).to eq(jingle)
+    end
+
+    it 'assigns the requested audio as @audio' do
+      expect(assigns(:audio)).to eq(jingle.audio)
+    end
+  end
+
   # describe 'POST #create' do
   #   context 'with valid params' do
   #     it 'creates a new Jingle' do

@@ -12,10 +12,13 @@ module Users
       @audio = @jingle.build_audio
     end
 
+    def edit
+    end
+
     private
 
     def set_jingle
-      @jingle = Jingle.find(params[:jingle_id])
+      @jingle = Jingle.friendly.find(params[:jingle_id])
     end
 
     def set_audio
