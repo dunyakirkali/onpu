@@ -2,7 +2,7 @@
   h3 = "#{@jingle.persisted? ? 'Edit' : 'New'} jingle"
 
 = form_for [:users, @jingle], url: @jingle.new_record? ? users_jingles_path(page: params[:page]) : users_jingle_path(@jingle, page: params[:page]), html: { multipart: true, remote: true } do |f|
-  = f.hidden_field :audio_id, value: params[:jingle][:audio_id]
+  = f.hidden_field :audio_id, value: params[:jingle].present? ? params[:jingle][:audio_id] : nil
   
   #error_explanation
   .field

@@ -8,14 +8,12 @@ class Jingle < ApplicationRecord
   monetize :price_cents
 
   # Relations
-  has_attached_file :cover, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
   belongs_to :user
   belongs_to :audio
+  belongs_to :image
 
   # Validations
-  validates_attachment_presence :cover
-  validates_attachment_content_type :cover, content_type: %r{\Aimage\/.*\z}
-  validates :user, :title, :audio, presence: true
+  validates :user, :title, :audio, :image, presence: true
 
   # Filters
   after_create :create_parasut_product

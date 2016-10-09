@@ -24,17 +24,21 @@ RSpec.describe Users::JinglesController, type: :controller do
 
   describe 'POST #create' do
     context 'with valid params' do
-      it 'creates a new Jingle' do
-        audio = create(:audio)
+      let!(:audio) { create(:audio) }
+      let!(:image) { create(:image) }
+
+      before :each do
         valid_attributes[:audio_id] = audio.id
+        valid_attributes[:image_id] = image.id
+      end
+
+      it 'creates a new Jingle' do
         expect do
           post :create, xhr: true, params: { jingle: valid_attributes }
         end.to change(Jingle, :count).by(1)
       end
 
       it 'assigns a newly created jingle as @jingle' do
-        audio = create(:audio)
-        valid_attributes[:audio_id] = audio.id
         post :create, xhr: true, params: { jingle: valid_attributes }
         expect(assigns(:jingle)).to be_a(Jingle)
         expect(assigns(:jingle)).to be_persisted

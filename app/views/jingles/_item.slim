@@ -1,6 +1,6 @@
 .jingle
   = link_to item, class: 'jingle-image' do
-    = image_tag item.cover.url(:medium)
+    = image_tag item.image.file.url(:medium)
   .jingle-header
     h4 = link_to "#{item.title} by #{item.user ? item.user.email : 'N/A'}", item, class: 'header'
   .jingle-content

@@ -19,7 +19,7 @@ RSpec.describe 'User', type: :feature, js: true do
         click_on 'Create Audio'
         fill_in 'jingle_title', with: jingle.title
         fill_in 'jingle_price', with: jingle.price
-        attach_file 'jingle_cover', Rails.root.join('spec/fixtures/cover.jpg')
+        attach_file 'jingle_cover', Rails.root.join('spec/fixtures/cover.png')
         click_on 'Create Jingle'
         expect(page).to have_content('Jingle was successfully created.')
       end
