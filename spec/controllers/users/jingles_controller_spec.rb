@@ -26,7 +26,7 @@ RSpec.describe Users::JinglesController, type: :controller do
     context 'with valid params' do
       it 'creates a new Jingle' do
         audio = create(:audio)
-        valid_attributes.merge!(audio_id: audio.id)
+        valid_attributes[:audio_id] = audio.id
         expect do
           post :create, xhr: true, params: { jingle: valid_attributes }
         end.to change(Jingle, :count).by(1)
@@ -34,7 +34,7 @@ RSpec.describe Users::JinglesController, type: :controller do
 
       it 'assigns a newly created jingle as @jingle' do
         audio = create(:audio)
-        valid_attributes.merge!(audio_id: audio.id)
+        valid_attributes[:audio_id] = audio.id
         post :create, xhr: true, params: { jingle: valid_attributes }
         expect(assigns(:jingle)).to be_a(Jingle)
         expect(assigns(:jingle)).to be_persisted

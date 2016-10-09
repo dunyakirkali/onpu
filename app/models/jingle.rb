@@ -28,20 +28,20 @@ class Jingle < ApplicationRecord
     parasut_product = Parasut::Product.create(parasut_product_attrs)
     update_column(:parasut_id, parasut_product.id)
   rescue
-    puts '~~~ Error'
+    Rails.logger.info '~~~ Error @ create_parasut_product'
   end
 
   def update_parasut_product
     Parasut::Product.save_existing(parasut_id, parasut_product_attrs)
   rescue
-    puts '~~~ Error'
+    Rails.logger.info '~~~ Error @ update_parasut_product'
   end
 
   def destroy_parasut_product
     parasut_product = Parasut::Product.find(parasut_id)
     parasut_product.destroy
   rescue
-    puts '~~~ Error'
+    Rails.logger.info '~~~ Error @ destroy_parasut_product'
   end
 
   def parasut_product_attrs

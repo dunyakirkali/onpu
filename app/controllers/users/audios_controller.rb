@@ -15,7 +15,7 @@ module Users
     def edit
     end
 
-    def create  
+    def create
       @audio = @jingle.build_audio(audio_params)
       @audio.save
       render layout: false

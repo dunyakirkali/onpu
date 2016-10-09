@@ -1,3 +1,4 @@
+# Audio
 class Audio < ApplicationRecord
   # Relations
   has_attached_file :file
