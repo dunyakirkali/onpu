@@ -1,6 +1,7 @@
 class Audio < ApplicationRecord
   # Relations
   has_attached_file :file
+  has_one :jingle
 
   # Validations
   validates_attachment_presence :file

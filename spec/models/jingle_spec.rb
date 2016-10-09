@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Jingle, type: :model do
   # Relations
   it { should belong_to(:user) }
+  it { should belong_to(:audio) }
 
   # Validations
   it { should validate_presence_of(:title) }

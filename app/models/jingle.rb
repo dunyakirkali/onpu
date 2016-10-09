@@ -9,8 +9,8 @@ class Jingle < ApplicationRecord
 
   # Relations
   has_attached_file :cover, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
-
   belongs_to :user
+  belongs_to :audio
 
   # Validations
   validates_attachment_presence :cover

@@ -5,13 +5,14 @@ RSpec.describe Users::AudiosController, type: :controller do
 
   let(:valid_attributes) { attributes_for(:jingle) }
   let(:invalid_attributes) { attributes_for(:jingle, title: nil) }
+  let(:jingle) { create(:jingle) }
 
-  # describe 'GET #new' do
-  #   it 'assigns a new jingle as @jingle' do
-  #     get :new, xhr: true, params: {}
-  #     expect(assigns(:jingle)).to be_a_new(Jingle)
-  #   end
-  # end
+  describe 'GET #new' do
+    it 'assigns a new audio as @audio' do
+      get :new, xhr: true, params: { jingle_id: jingle.id }
+      expect(assigns(:audio)).to be_a_new(Audio)
+    end
+  end
   #
   # describe 'GET #edit' do
   #   it 'assigns the requested jingle as @jingle' do

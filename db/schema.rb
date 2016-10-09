@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009090810) do
+ActiveRecord::Schema.define(version: 20161009093504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20161009090810) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.integer  "audio_id"
+    t.index ["audio_id"], name: "index_jingles_on_audio_id", using: :btree
     t.index ["slug"], name: "index_jingles_on_slug", unique: true, using: :btree
   end
 
@@ -74,4 +76,5 @@ ActiveRecord::Schema.define(version: 20161009090810) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "jingles", "audios"
 end
