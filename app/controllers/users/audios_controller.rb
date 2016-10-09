@@ -20,6 +20,10 @@ module Users
       render layout: false
     end
 
+    def update
+      @audio.update(audio_params)
+    end
+
     private
 
     def set_audio

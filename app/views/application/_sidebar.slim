@@ -4,11 +4,7 @@ ul.white-text
       = image_tag 'note.jpg', class: 'ui medium rounded image'
   li = render 'search_form'
   - if user_signed_in?
-    li = link_to 'New Jingle', new_users_audio_path, class: 'new_jingle'
+    li = link_to 'New Jingle', new_users_audio_path, class: 'new_jingle', remote: true
     li = render 'user_menu', title: current_user.email
 
-javascript:
-  $('.new_jingle').on('click', function() {
-  
-  });
   
