@@ -6,8 +6,13 @@ RSpec.describe JinglesController, type: :controller do
   describe 'GET #buy' do
     it 'assigns jingle as @jingle' do
       jingle = create(:jingle, valid_attributes)
-      process :buy, method: :get, params: { id: jingle.to_param }
+      get :buy, xhr: true, params: { id: jingle.to_param }, format: :js
       expect(assigns(:jingle)).to eq(jingle)
+    end
+
+    it "renders the 'buy' template" do
+      get :buy, xhr: true, params: { id: jingle.to_param }, format: :js
+      expect(response).to render_template('users/jingles/buy')
     end
   end
 
