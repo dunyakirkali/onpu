@@ -1,5 +1,3 @@
-.ui.grid.container
-  #jingles.column
-    .ui.stackable.centered.cards
-      = render partial: 'jingles/item', collection: @jingles
-  = paginate @jingles
+#jingles.jingles
+  = render partial: 'jingles/item', collection: @jingles
+= paginate @jingles, remote: true

@@ -1,0 +1,4 @@
+= form_for search_jingles_path, url: search_jingles_path, method: 'get', html: { class: 'search-bar', role: "search" }, remote: true do
+  = text_field_tag :query, params[:query], type: 'search', placeholder: 'Search ...', onchange: '$(this).closest("form").submit();'
+  = button_tag do
+    img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon"

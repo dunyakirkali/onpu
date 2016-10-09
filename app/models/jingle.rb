@@ -8,32 +8,41 @@ class Jingle < ApplicationRecord
   monetize :price_cents
 
   # Relations
-  has_attached_file :audio
-  has_attached_file :cover, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
-
   belongs_to :user
+  belongs_to :audio, dependent: :destroy
+  belongs_to :image, dependent: :destroy
 
   # Validations
-  validates_attachment_presence :audio
-  validates_attachment :audio, content_type: { content_type: ['audio/mpeg', 'audio/mp3'] }
-  validates_attachment_presence :cover
-  validates_attachment_content_type :cover, content_type: %r{\Aimage\/.*\z}
-  validates :user, :title, presence: true
+  validates :user, :title, :audio, :image, presence: true
 
   # Filters
   after_create :create_parasut_product
   after_create :update_parasut_product
   before_destroy :destroy_parasut_product
 
+  # Nested attr
+  accepts_nested_attributes_for :image
+
   private
 
   def create_parasut_product
     parasut_product = Parasut::Product.create(parasut_product_attrs)
     update_column(:parasut_id, parasut_product.id)
+  rescue
+    Rails.logger.info '~~~ Error @ create_parasut_product'
   end
 
   def update_parasut_product
     Parasut::Product.save_existing(parasut_id, parasut_product_attrs)
+  rescue
+    Rails.logger.info '~~~ Error @ update_parasut_product'
+  end
+
+  def destroy_parasut_product
+    parasut_product = Parasut::Product.find(parasut_id)
+    parasut_product.destroy
+  rescue
+    Rails.logger.info '~~~ Error @ destroy_parasut_product'
   end
 
   def parasut_product_attrs
@@ -55,10 +64,5 @@ class Jingle < ApplicationRecord
       bg_color: '5cbc68',
       text_color: 'f3f2f2'
     }
-  end
-
-  def destroy_parasut_product
-    parasut_product = Parasut::Product.find(parasut_id)
-    parasut_product.destroy
   end
 end

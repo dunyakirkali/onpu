@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002163922) do
+ActiveRecord::Schema.define(version: 20161009121331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "audios", force: :cascade do |t|
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -27,23 +36,28 @@ ActiveRecord::Schema.define(version: 20161002163922) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
   create_table "jingles", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.string   "audio_file_name"
-    t.string   "audio_content_type"
-    t.integer  "audio_file_size"
-    t.datetime "audio_updated_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "slug"
-    t.integer  "price_cents",        default: 0,     null: false
-    t.string   "price_currency",     default: "USD", null: false
+    t.integer  "price_cents",    default: 0,     null: false
+    t.string   "price_currency", default: "USD", null: false
     t.integer  "parasut_id"
-    t.string   "cover_file_name"
-    t.string   "cover_content_type"
-    t.integer  "cover_file_size"
-    t.datetime "cover_updated_at"
+    t.integer  "audio_id"
+    t.integer  "image_id"
+    t.index ["audio_id"], name: "index_jingles_on_audio_id", using: :btree
+    t.index ["image_id"], name: "index_jingles_on_image_id", using: :btree
     t.index ["slug"], name: "index_jingles_on_slug", unique: true, using: :btree
   end
 
@@ -65,4 +79,6 @@ ActiveRecord::Schema.define(version: 20161002163922) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "jingles", "audios"
+  add_foreign_key "jingles", "images"
 end
