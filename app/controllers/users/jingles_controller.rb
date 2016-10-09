@@ -40,7 +40,7 @@ module Users
     end
 
     def jingle_params
-      params.require(:jingle).permit(:title, :audio_id, :price, :cover)
+      params.require(:jingle).permit(:title, :price, :cover, :audio_id)
     end
 
     def scope
