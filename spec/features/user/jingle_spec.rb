@@ -5,16 +5,19 @@ RSpec.describe 'User', type: :feature, js: true do
 
   context 'w/o a jingle' do
     describe 'can creaete a new jingle' do
-      xit 'via sidebar' do
-        user = create(:user)
+      let!(:user) { create(:user) }
+
+      before :each do
         login_as(user)
         visit root_path
         find('#sidebar').click
+      end
+
+      it 'via sidebar' do
         click_on 'New Jingle'
-        fill_in 'jingle_title', with: jingle.title
-        fill_in 'jingle_price', with: jingle.price
-        attach_file 'jingle_audio', Rails.root.join('spec/fixtures/audio.mp3')
-        attach_file 'jingle_cover', Rails.root.join('spec/fixtures/cover.jpg')
+        attach_file 'audio_file', Rails.root.join('spec/fixtures/audio.mp3')
+        click_on 'Create Audio'
+
         click_on 'Create Jingle'
         expect(page).to have_content('Jingle was successfully created.')
       end

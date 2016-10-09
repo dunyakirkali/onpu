@@ -1,7 +1,7 @@
 .header
   h3 = "#{@jingle.persisted? ? 'Edit' : 'New'} jingle"
 
-= form_for [:users, @jingle], url: @jingle.new_record? ? users_jingles_path(page: params[:page]) : users_jingle_path(@jingle, page: params[:page]), html: { multipart: true, class: 'ui form', remote: true } do |f|
+= form_for [:users, @jingle], url: @jingle.new_record? ? users_jingles_path(page: params[:page]) : users_jingle_path(@jingle, page: params[:page]), html: { multipart: true, remote: true } do |f|
   #error_explanation
   .field
     = f.label :title

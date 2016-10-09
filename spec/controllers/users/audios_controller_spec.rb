@@ -13,10 +13,6 @@ RSpec.describe Users::AudiosController, type: :controller do
       get :new, xhr: true, params: { jingle_id: jingle.id }
     end
 
-    it 'assigns the jingle as @jingle' do
-      expect(assigns(:jingle)).to eq(jingle)
-    end
-
     it 'assigns a new audio as @audio' do
       expect(assigns(:audio)).to be_a_new(Audio)
     end
@@ -26,11 +22,7 @@ RSpec.describe Users::AudiosController, type: :controller do
     let(:jingle) { create(:jingle, user: @user) }
 
     before :each do
-      process :edit, method: :get, params: { jingle_id: jingle.to_param }, format: :js
-    end
-
-    it 'assigns the jingle as @jingle' do
-      expect(assigns(:jingle)).to eq(jingle)
+      process :edit, method: :get, params: { id: jingle.audio.to_param }, format: :js
     end
 
     it 'assigns the requested audio as @audio' do

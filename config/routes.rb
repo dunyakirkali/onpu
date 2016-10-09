@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   namespace :users do
-    resources :jingles, except: [:index, :show] do
-      resource :audio, except: [:index, :show, :destroy]
-    end
+    resources :jingles, except: [:index, :show]
+    resources :audios, except: [:index, :show, :destroy]
   end
 
   resources :jingles, only: :show do

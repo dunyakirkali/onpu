@@ -1,0 +1,9 @@
+.header
+  h3 = "#{@audio.persisted? ? 'Edit' : 'New'} audio"
+
+= form_for [:users, @audio], url: @audio.new_record? ? users_jingles_audio_path : users_jingles-audio_path(@jingle), html: { multipart: true, remote: true } do |f|
+  #error_explanation
+  .field
+    = f.label :file
+    = f.file_field :file
+  = f.submit
