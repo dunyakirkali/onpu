@@ -114,21 +114,4 @@ RSpec.describe Users::AudiosController, type: :controller do
   #     end
   #   end
   # end
-  #
-  # describe 'DELETE #destroy' do
-  #   it 'destroys the requested jingle' do
-  #     jingle = create(:jingle, valid_attributes)
-  #     @user.jingles << jingle
-  #     expect do
-  #       delete :destroy, xhr: true, params: { id: jingle.to_param }
-  #     end.to change(Jingle, :count).by(-1)
-  #   end
-  #
-  #   it 'redirects to the tags list' do
-  #     jingle = create(:jingle, valid_attributes)
-  #     @user.jingles << jingle
-  #     delete :destroy, xhr: true, params: { id: jingle.to_param }
-  #     expect(response).to render_template('users/jingles/destroy')
-  #   end
-  # end
 end

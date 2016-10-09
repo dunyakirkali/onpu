@@ -21,9 +21,5 @@ RSpec.describe Users::AudiosController, type: :routing do
     it 'routes to #update via PATCH' do
       expect(patch: '/users/jingles/1/audio').to route_to('users/audios#update', jingle_id: '1')
     end
-
-    it 'routes to #destroy' do
-      expect(delete: '/users/jingles/1/audio').to route_to('users/audios#destroy', jingle_id: '1')
-    end
   end
 end
