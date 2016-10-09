@@ -16,11 +16,11 @@ RSpec.describe 'User', type: :feature, js: true do
       it 'via sidebar' do
         click_on 'New Jingle'
         attach_file 'audio_file', Rails.root.join('spec/fixtures/audio.mp3')
-        click_on 'Create Audio'
+        click_on 'Audio Ekle'
         fill_in 'jingle_title', with: jingle.title
         fill_in 'jingle_price', with: jingle.price_cents
         attach_file 'jingle_image_attributes_file', Rails.root.join('spec/fixtures/cover.png')
-        click_on 'Create Jingle'
+        click_on 'Jingle Ekle'
         expect(page).to have_content('Jingle was successfully created.')
       end
     end
@@ -44,7 +44,7 @@ RSpec.describe 'User', type: :feature, js: true do
         visit root_path
         click_on 'Edit'
         fill_in 'jingle_title', with: jingle.title
-        click_on 'Update Jingle'
+        click_on 'Jingle Güncelle'
         expect(page).to have_content('Jingle was successfully updated.')
       end
     end
