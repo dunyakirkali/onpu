@@ -6,6 +6,7 @@ RSpec.describe Jingle, type: :model do
   it { should belong_to(:audio) }
 
   # Validations
+  it { should validate_presence_of(:audio) }
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:user) }
   it { should validate_attachment_presence(:cover) }

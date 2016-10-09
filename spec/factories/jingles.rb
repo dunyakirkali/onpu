@@ -5,5 +5,6 @@ FactoryGirl.define do
     cover { Rack::Test::UploadedFile.new(Rails.root.join('app/assets/images/note.jpg'), 'image/jpg') }
     price_cents { 10_000 }
     price_currency { 'TRY' }
+    audio
   end
 end

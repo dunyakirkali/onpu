@@ -15,7 +15,7 @@ class Jingle < ApplicationRecord
   # Validations
   validates_attachment_presence :cover
   validates_attachment_content_type :cover, content_type: %r{\Aimage\/.*\z}
-  validates :user, :title, presence: true
+  validates :user, :title, :audio, presence: true
 
   # Filters
   after_create :create_parasut_product
