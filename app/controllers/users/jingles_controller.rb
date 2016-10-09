@@ -25,6 +25,7 @@ module Users
 
     def update
       set_jingles if @jingle.update(jingle_params)
+      render
     end
 
     def destroy
