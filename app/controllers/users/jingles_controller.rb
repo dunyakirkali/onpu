@@ -11,6 +11,7 @@ module Users
 
     def new
       @jingle = scope.build
+      @jingle.build_image
     end
 
     def edit
@@ -41,7 +42,7 @@ module Users
     end
 
     def jingle_params
-      params.require(:jingle).permit(:title, :price, :image_id, :audio_id)
+      params.require(:jingle).permit(:title, :price, :audio_id, image_attributes: [:id, :file])
     end
 
     def scope

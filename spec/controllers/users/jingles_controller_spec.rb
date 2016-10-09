@@ -29,7 +29,7 @@ RSpec.describe Users::JinglesController, type: :controller do
 
       before :each do
         valid_attributes[:audio_id] = audio.id
-        valid_attributes[:image_id] = image.id
+        valid_attributes[:image_attributes] = attributes_for(:image)
       end
 
       it 'creates a new Jingle' do

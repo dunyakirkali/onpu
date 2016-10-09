@@ -9,8 +9,8 @@ class Jingle < ApplicationRecord
 
   # Relations
   belongs_to :user
-  belongs_to :audio
-  belongs_to :image
+  belongs_to :audio, dependent: :destroy
+  belongs_to :image, dependent: :destroy
 
   # Validations
   validates :user, :title, :audio, :image, presence: true
@@ -19,6 +19,9 @@ class Jingle < ApplicationRecord
   after_create :create_parasut_product
   after_create :update_parasut_product
   before_destroy :destroy_parasut_product
+
+  # Nested attr
+  accepts_nested_attributes_for :image
 
   private
 
