@@ -15,6 +15,12 @@ module Users
     def edit
     end
 
+    def create  
+      @audio = @jingle.build_audio(audio_params)
+      @audio.save
+      render layout: false
+    end
+
     private
 
     def set_jingle
@@ -23,6 +29,10 @@ module Users
 
     def set_audio
       @audio = @jingle.audio
+    end
+
+    def audio_params
+      params.require(:audio).permit(:file)
     end
   end
 end

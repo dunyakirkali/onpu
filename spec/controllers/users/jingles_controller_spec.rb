@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Users::JinglesController, type: :controller do
   login_user
 
-  let(:valid_attributes) { attributes_for(:jingle) }
+  let(:valid_attributes) { attributes_for(:jingle).merge(audio_id: 1) }
   let(:invalid_attributes) { attributes_for(:jingle, title: nil) }
 
   describe 'GET #new' do
@@ -30,7 +30,7 @@ RSpec.describe Users::JinglesController, type: :controller do
         end.to change(Jingle, :count).by(1)
       end
 
-      it 'assigns a newly created catgory as @jingle' do
+      it 'assigns a newly created jingle as @jingle' do
         post :create, xhr: true, params: { jingle: valid_attributes }
         expect(assigns(:jingle)).to be_a(Jingle)
         expect(assigns(:jingle)).to be_persisted

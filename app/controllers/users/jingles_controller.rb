@@ -39,9 +39,8 @@ module Users
       @jingle = scope.friendly.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def jingle_params
-      params.require(:jingle).permit(:title, :audio, :price, :cover)
+      params.require(:jingle).permit(:title, :audio_id, :price, :cover)
     end
 
     def scope

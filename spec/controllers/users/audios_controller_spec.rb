@@ -38,33 +38,35 @@ RSpec.describe Users::AudiosController, type: :controller do
     end
   end
 
-  # describe 'POST #create' do
-  #   context 'with valid params' do
-  #     it 'creates a new Jingle' do
-  #       expect do
-  #         post :create, xhr: true, params: { jingle: valid_attributes }
-  #       end.to change(Jingle, :count).by(1)
-  #     end
-  #
-  #     it 'assigns a newly created catgory as @jingle' do
-  #       post :create, xhr: true, params: { jingle: valid_attributes }
-  #       expect(assigns(:jingle)).to be_a(Jingle)
-  #       expect(assigns(:jingle)).to be_persisted
-  #     end
-  #   end
-  #
-  #   context 'with invalid params' do
-  #     it 'assigns a newly created but unsaved jingle as @jingle' do
-  #       post :create, xhr: true, params: { jingle: invalid_attributes }, format: :js
-  #       expect(assigns(:jingle)).to be_a_new(Jingle)
-  #     end
-  #
-  #     it "re-renders the 'new' template" do
-  #       post :create, xhr: true, params: { jingle: invalid_attributes }, format: :js
-  #       expect(response).to render_template('users/jingles/create')
-  #     end
-  #   end
-  # end
+  describe 'POST #create' do
+    let!(:jingle) { create(:jingle, user: @user) }
+
+    context 'with valid params' do
+      it 'creates a new audio' do
+        expect do
+          post :create, xhr: true, params: { jingle_id: jingle.to_param, audio: valid_attributes }
+        end.to change(Audio, :count).by(1)
+      end
+
+      it 'assigns a newly created audio as @audio' do
+        post :create, xhr: true, params: { jingle_id: jingle.to_param, audio: valid_attributes }
+        expect(assigns(:audio)).to be_a(Audio)
+        expect(assigns(:audio)).to be_persisted
+      end
+    end
+
+    context 'with invalid params' do
+      it 'assigns a newly created but unsaved audio as @audio' do
+        post :create, xhr: true, params: { jingle_id: jingle.to_param, audio: invalid_attributes }, format: :js
+        expect(assigns(:audio)).to be_a_new(Audio)
+      end
+
+      it "re-renders the 'new' template" do
+        post :create, xhr: true, params: { jingle_id: jingle.to_param, audio: invalid_attributes }, format: :js
+        expect(response).to render_template('users/audios/create')
+      end
+    end
+  end
   #
   # describe 'PUT #update' do
   #   context 'with valid params' do
