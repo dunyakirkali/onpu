@@ -27,6 +27,7 @@ gem 'parasut_rails'
 gem 'bourbon', '~> 4.2.7'
 gem 'neat', '~> 1.8.0'
 gem 'bitters'
+gem 'remotipart', '~> 1.2'
 
 group :development, :test do
   gem 'faker'
