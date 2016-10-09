@@ -5,7 +5,7 @@ FactoryGirl.define do
 
     trait :with_jingels do
       after(:create) do |user|
-        create_list(:jingle, 2, user: user)
+        create(:jingle, user: user)
       end
     end
   end

@@ -1,10 +1,10 @@
 # JinglesController
 class JinglesController < ApplicationController
   before_action :set_jingle, only: [:buy, :show]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: :buy
 
   def buy
-    redirect_to search_jingles_path, notice: 'Jingle was bought.'
+    render layout: false
   end
 
   def show

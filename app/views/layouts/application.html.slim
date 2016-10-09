@@ -15,3 +15,9 @@ html lang="#{ I18n.locale }"
       = render 'sidebar'
     .container
       = yield
+      .modal
+        input#modal-1.modal-state type='checkbox'
+        .modal-fade-screen
+          .modal-inner
+            .modal-close for="modal-1"
+            .modal-content

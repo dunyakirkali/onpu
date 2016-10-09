@@ -26,6 +26,8 @@ gem 'kaminari'
 gem 'parasut_rails'
 gem 'bourbon', '~> 4.2.7'
 gem 'neat', '~> 1.8.0'
+gem 'bitters'
+gem 'remotipart', '~> 1.2'
 
 group :development, :test do
   gem 'faker'
@@ -33,9 +35,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.7.0'
   gem 'launchy'
+  gem 'database_cleaner'
 end
 
 group :development do
+  gem 'rb-readline'
+  gem 'pry-rails'
   gem 'rubocop'
   gem 'binding_of_caller'
   gem 'web-console'
@@ -62,4 +67,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-jplayer'
   gem 'rails-assets-normalize-scss'
   gem 'rails-assets-animate-css'
+  gem 'rails-assets-notifyjs'
 end

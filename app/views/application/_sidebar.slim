@@ -1,13 +1,10 @@
 ul.white-text
   li
-    a.logo.icon.image href="/"
-      = image_tag 'note.jpg', class: 'ui medium rounded image', style: 'max-width:100%;'
-  li
-    = form_for search_jingles_path, url: search_jingles_path, method: 'get', remote: true, html: { class: 'ui form' } do
-      .field
-        = text_field_tag :query, params[:query], placeholder: 'Search ...', onchange: '$(this).closest("form").submit();'
+    = link_to root_path, class: 'logo icon image' do
+      = image_tag 'note.jpg', class: 'ui medium rounded image'
+  li = render 'search_form'
   - if user_signed_in?
-    li
-      = link_to 'New Jingle', new_users_jingle_path, class: 'ui fluid primary button', remote: true
-    li
-      = render 'user_menu', title: current_user.email
+    li = link_to 'New Jingle', new_users_audio_path, class: 'new_jingle', remote: true
+    li = render 'user_menu', title: current_user.email
+
+  

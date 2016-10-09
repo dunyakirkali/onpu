@@ -1,10 +1,16 @@
 @import 'normalize-scss';
 @import 'bourbon';
+@import 'base/base';
 @import 'neat';
 @import 'icomoon';
 @import 'animate-css';
+@import 'mixins';
 @import 'sidebar';
 @import 'content';
+@import 'jingles';
+@import 'modal';
+@import 'search_bar';
+@import 'dropzone';
 
 $mobile: new-breakpoint(max-width 992px 12);
 
@@ -28,9 +34,9 @@ html, body {
   position:fixed;
   ul{
     li{
-      opacity: 0;
+      @include invisible;
       &:first-child{
-        opacity: 1;
+        @include visible;
       }
     }
   }
@@ -40,10 +46,9 @@ html, body {
       @include span-columns(9);
     }
     ul{
-      opacity: 1;
-      display:block !important;
+      @include visible;
       li{
-        opacity: 1;
+        @include visible;
       }
     }
   }
