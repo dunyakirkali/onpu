@@ -19,6 +19,7 @@ module Users
     def create
       @jingle = scope.build(jingle_params)
       set_jingles if @jingle.save
+      render
     end
 
     def update

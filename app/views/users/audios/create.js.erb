@@ -1,4 +1,4 @@
 $.ajax({
-  url: "<%= new_users_jingle_path %>",
+  url: "<%= new_users_jingle_path(jingle: { audio_id: @audio.id }) %>",
   dataType: 'script'
 });
