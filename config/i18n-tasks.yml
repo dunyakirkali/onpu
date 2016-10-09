@@ -18,6 +18,8 @@ data:
     - config/locales/%{locale}.yml
     - config/locales/**/*.%{locale}.yml
     - "<%= %x[bundle show devise-i18n].chomp %>/rails/locales/%{locale}.yml"
+    - "<%= %x[bundle show kaminari-i18n].chomp %>/config/locales/%{locale}.yml"
+    - "<%= %x[bundle show rails-i18n].chomp %>/rails/locale/%{locale}.yml"
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
