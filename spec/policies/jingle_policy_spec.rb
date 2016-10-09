@@ -10,6 +10,9 @@ RSpec.describe JinglePolicy, type: :policy do
 
     it { should permit_action(:buy) }
     it { should forbid_action(:edit) }
+    it { should forbid_action(:update) }
+    it { should forbid_action(:new) }
+    it { should forbid_action(:create) }
     it { should forbid_action(:destroy) }
   end
 
@@ -18,6 +21,9 @@ RSpec.describe JinglePolicy, type: :policy do
 
     it { should permit_action(:buy) }
     it { should forbid_action(:edit) }
+    it { should forbid_action(:update) }
+    it { should permit_action(:new) }
+    it { should permit_action(:create) }
     it { should forbid_action(:destroy) }
   end
 
@@ -30,6 +36,9 @@ RSpec.describe JinglePolicy, type: :policy do
 
     it { should permit_action(:buy) }
     it { should permit_action(:edit) }
+    it { should permit_action(:update) }
+    it { should permit_action(:new) }
+    it { should permit_action(:create) }
     it { should permit_action(:destroy) }
   end
 end

@@ -102,6 +102,7 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.1.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
@@ -145,6 +146,9 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-i18n (0.4.0)
+      kaminari
+      rails
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.1.5)
@@ -268,6 +272,9 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.0.0)
+      i18n (~> 0.7)
+      railties (~> 5.0)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -398,6 +405,7 @@ DEPENDENCIES
   coveralls
   database_cleaner
   devise (~> 4.2.0)
+  devise-i18n
   factory_girl_rails (~> 4.7.0)
   faker
   foreman
@@ -406,6 +414,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
+  kaminari-i18n
   launchy
   listen (~> 3.1.5)
   money-rails
@@ -428,6 +437,7 @@ DEPENDENCIES
   rails-assets-normalize-scss!
   rails-assets-notifyjs!
   rails-controller-testing
+  rails-i18n (~> 5.0.0)
   rb-readline
   remotipart (~> 1.2)
   rollbar (~> 2.12.0)
