@@ -28,12 +28,12 @@ gem 'bourbon', '~> 4.2.7'
 gem 'neat', '~> 1.8.0'
 gem 'bitters'
 gem 'remotipart', '~> 1.2'
+gem 'factory_girl_rails', '~> 4.7.0'
 
 group :development, :test do
   gem 'faker'
   gem 'bundler-audit'
   gem 'rspec-rails', '~> 3.0'
-  gem 'factory_girl_rails', '~> 4.7.0'
   gem 'launchy'
   gem 'database_cleaner'
 end
