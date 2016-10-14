@@ -1,2 +1,21 @@
 $('.modal-content').html('<%= j render "form" %>');
 $(".modal-state").prop('checked', true);
+
+myDropzoneImage = new Dropzone("#new_jingle", {
+ paramName: 'jingle[image_attributes][file]',
+ autoProcessQueue: false,
+ init: function() {
+   this.on('sending', function(file, xhr, formData) {
+     $('input[name^=jingle]').each(function(index, elem) {
+       formData.append(elem.name, elem.value);
+     });
+   });
+ },
+ success: function(response) {
+   eval(response.xhr.response)
+ }
+});
+
+$('#submit-button').click(function(e){
+  myDropzoneImage.processQueue();
+});
