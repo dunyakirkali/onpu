@@ -3,7 +3,5 @@
 
 = form_for [:users, @audio], html: { multipart: true }, remote: true do |f|
   #error_explanation
-  .field
-    = f.label :file
-    = f.file_field :file
-  = f.submit
+  .field#audio-upload style='border:1px solid red;'
+    = f.label :file, 'Drop audio here'
