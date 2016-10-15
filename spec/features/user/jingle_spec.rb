@@ -10,10 +10,9 @@ RSpec.describe 'User', type: :feature, js: true do
       before :each do
         login_as(user)
         visit root_path
-        find('#sidebar').click
       end
 
-      it 'via sidebar' do
+      it 'via footer' do
         click_on 'New Jingle'
         sleep 0.5
         show_dropzone_field 'audio_file'
