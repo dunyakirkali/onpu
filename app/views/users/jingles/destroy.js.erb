@@ -1,3 +1,3 @@
 $.notify('Jingle was successfully destroyed.', 'success');
-$('#jingles').html('<%= j render(partial: "jingles/item", collection: @jingles) %>');
+$('.container').html('<%= j render(template: "jingles/index") %>');
 $('.pagination').replaceWith('<%= j paginate(@jingles, remote: true) %>');
