@@ -14,6 +14,9 @@ require 'rspec/its'
 require 'paperclip/matchers'
 require 'money-rails/test_helpers'
 require 'pundit/matchers'
+require 'sidekiq/testing'
+
+Sidekiq::Testing.inline!
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
