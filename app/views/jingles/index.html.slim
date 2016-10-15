@@ -3,4 +3,7 @@
     = render partial: 'jingles/item', collection: @jingles
 
 javascript:
-  $("#jingles").flipster();
+  $("#jingles").flipster({
+    style: 'flat',
+    spacing: -0.25
+  });
