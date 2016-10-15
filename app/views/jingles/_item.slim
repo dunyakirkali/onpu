@@ -1,5 +1,6 @@
 .jingle
-  = image_tag item.image.file.url(:thumb), data: { image: item.image.file.url(:medium) }, class: 'jingle-image'
+  .jingle-image style="background-image:url(#{item.image.file.url(:thumb)})"
+  = image_tag item.image.file.url(:thumb), data: { image: item.image.file.url(:medium) }
   .jingle-content
     .jingle-header
       h4
