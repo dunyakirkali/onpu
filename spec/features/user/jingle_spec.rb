@@ -16,7 +16,6 @@ RSpec.describe 'User', type: :feature, js: true do
       it 'via sidebar' do
         click_on 'New Jingle'
         attach_file 'audio_file', Rails.root.join('spec/fixtures/audio.mp3')
-        click_on 'Audio Ekle'
         fill_in 'jingle_title', with: jingle.title
         fill_in 'jingle_price', with: jingle.price_cents
         attach_file 'jingle_image_attributes_file', Rails.root.join('spec/fixtures/cover.png')
