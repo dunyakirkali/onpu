@@ -77,4 +77,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-animate-css'
   gem 'rails-assets-notifyjs'
   gem 'rails-assets-jquery-flipster'
+  gem 'rails-assets-pubsub-js'
 end
