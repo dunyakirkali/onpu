@@ -1,7 +1,7 @@
 .jingle
   = image_tag item.image.file.url(:thumb), data: { image: item.image.file.url(:medium) }, class: 'jingle-image'
   .jingle-header
-    h4 = link_to "#{item.title} by #{item.user ? item.user.email : 'N/A'}", item, class: 'header'
+    h4 = link_to "#{item.title} by #{item.user ? item.user.email : 'N/A'}", item, class: 'header', remote: true
   .jingle-content
     span.price = number_to_currency(item.price, unit: item.price_currency)
   .jingle-footeer
