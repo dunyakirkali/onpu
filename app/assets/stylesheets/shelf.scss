@@ -1,17 +1,16 @@
 .shelf{
-  position:absolute;
-  bottom:6em;
+  position:relative;
+  bottom:0em;
   left:0;
+  height:100%;
   .jingle{
     height: 300px;
     position:relative;
     overflow:visible;
-    img{
-      visibility:hidden;
-    }
+
     .jingle-content{
       background: $green;
-      position:absolute;
+      position:relative;
       bottom:0;
       width: 100%;
       padding: 2%;

@@ -7,4 +7,4 @@
 #= require jingle
 #= require modal
 #= require dropzone
-#= require coverflow
+#= require jquery-flipster

@@ -14,8 +14,8 @@
 @import 'search_bar';
 @import 'dropzone';
 @import 'footer';
-@import 'coverflow';
 @import 'shelf';
+@import 'jquery-flipster';
 
 $mobile: new-breakpoint(max-width 992px 12);
 
