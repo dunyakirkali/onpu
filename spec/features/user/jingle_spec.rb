@@ -28,25 +28,28 @@ RSpec.describe 'User', type: :feature, js: true do
   end
 
   context 'w a jingle' do
-    let(:users_jingle) { user.jingles.first }
+    let!(:user) { create(:user, :with_jingels) }
+    let!(:users_jingle) { user.jingles.first }
+
+    before :each do
+      login_as(user)
+      visit root_path
+      within '.jingle-header' do
+        first('a').trigger('click')
+      end
+      sleep 1
+    end
+
     describe 'can delete a jingle' do
-      it 'via content' do
-        user = create(:user, :with_jingels)
-        login_as(user)
-        visit root_path
-        click_on users_jingle.title
-        click_on 'Destroy'
+      fit 'via content' do
+        first('.destroy-link').trigger('click')
         expect(page).to have_content('Jingle was successfully destroyed.')
       end
     end
 
     describe 'can edit a jingle' do
-      it 'via content' do
-        user = create(:user, :with_jingels)
-        login_as(user)
-        visit root_path
-        click_on users_jingle.title
-        click_on 'Edit'
+      fit 'via content' do
+        first('.edit-link').trigger('click')
         fill_in 'jingle_title', with: jingle.title
         click_on 'Jingle Güncelle'
         expect(page).to have_content('Jingle was successfully updated.')
