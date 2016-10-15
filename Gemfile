@@ -36,6 +36,7 @@ gem 'faker'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'devise-i18n'
 gem 'kaminari-i18n'
+gem 'react-rails'
 
 group :development, :test do
   gem 'bundler-audit'
