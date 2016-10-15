@@ -6,6 +6,9 @@
     height: 300px;
     position:relative;
     overflow:visible;
+    img{
+      visibility:hidden;
+    }
     .jingle-content{
       background: $green;
       position:absolute;
