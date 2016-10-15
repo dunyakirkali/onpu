@@ -28,11 +28,13 @@ RSpec.describe 'User', type: :feature, js: true do
   end
 
   context 'w a jingle' do
+    let(:users_jingle) { user.jingles.first }
     describe 'can delete a jingle' do
       it 'via content' do
         user = create(:user, :with_jingels)
         login_as(user)
         visit root_path
+        click_on users_jingle.title
         click_on 'Destroy'
         expect(page).to have_content('Jingle was successfully destroyed.')
       end
@@ -43,6 +45,7 @@ RSpec.describe 'User', type: :feature, js: true do
         user = create(:user, :with_jingels)
         login_as(user)
         visit root_path
+        click_on users_jingle.title
         click_on 'Edit'
         fill_in 'jingle_title', with: jingle.title
         click_on 'Jingle Güncelle'
