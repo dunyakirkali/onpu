@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Image, type: :model do
+  # Includes
+  it_behaves_like 'disposable'
+
   # Relations
   it { should have_attached_file(:file) }
   it { should have_one(:jingle) }

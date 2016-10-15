@@ -10,9 +10,13 @@ require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'rspec/its'
 require 'paperclip/matchers'
 require 'money-rails/test_helpers'
 require 'pundit/matchers'
+require 'sidekiq/testing'
+
+Sidekiq::Testing.inline!
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -31,6 +35,7 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include AbstractController::Translation
+  config.include Dropzone
 
   config.extend ControllerMacros, type: :controller
 

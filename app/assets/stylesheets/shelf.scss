@@ -1,0 +1,24 @@
+.shelf{
+  position:absolute;
+  bottom:6em;
+  left:0;
+  .jingle{
+    height: 300px;
+    position:relative;
+    overflow:visible;
+    img{
+      visibility:hidden;
+    }
+    .jingle-content{
+      background: $green;
+      position:absolute;
+      bottom:0;
+      width: 100%;
+      padding: 2%;
+      a{
+        color:white;
+        text-decoration:none;
+      }
+    }
+  }
+}

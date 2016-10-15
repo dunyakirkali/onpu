@@ -10,12 +10,13 @@
   }
 
   .jingle-image {
-    height: 15em;
     background: whitesmoke;
     overflow: hidden;
-
-    img {
-      width: 100%;
-    }
+    width: 100%;
+    height:100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $blue;
   }
 }

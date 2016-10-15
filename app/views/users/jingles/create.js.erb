@@ -1,14 +1,45 @@
 $('#error_explanation ul').html('');
 <% if @jingle.errors.any? %>
-  $('.modal-content').html('<%= j render "form" %>');
+  $('.modal-content').html('<%=j render "form" %>');
   $('.modal-content').find('#error_explanation').html($('<ul>'));
-  <% @jingle.errors.full_messages.each do |message| %>
-    $('#error_explanation ul').append('<li><%== message%></li>');
+  <% @jingle.errors.full_messages.each do |message|  %>
+    $('#error_explanation ul').append('<li><%=message%></li>');
   <% end %>
   $(".modal-state").prop('checked', true);
+  element = '#new_jingle'
+  myDropzoneImage = new Dropzone(element, {
+    paramName: 'jingle[image_attributes][file]',
+    acceptedFiles: 'image/*',
+    autoProcessQueue: false,
+    addRemoveLinks: true,
+    maxFiles: 1,
+    init: function() {
+      this.on('sending', function(file, xhr, formData) {
+        $('input[name^=jingle]').each(function(index, elem) {
+          formData.append(elem.name, elem.value);
+        });
+      });
+    },
+    success: function(response) {
+      $(element+' .upload-progress').hide().find('.bar').css('width', "0%");
+      eval(response.xhr.response);
+    },
+    uploadprogress: function(file, progress) {
+      $(element+' .upload-progress').show().find('.bar').css('width', progress + "%");
+    },
+    drop: function() {
+      return $('.dz-complete .dz-error-message').html('');
+    }
+  });
+
+  $(element).on('submit', function(){
+    if(myDropzoneImage.files.length > 0){
+      myDropzoneImage.processQueue();
+      return false;
+    }
+  });
 <% else %>
   $.notify('Jingle was successfully created.', 'success');
   $(".modal-state").prop('checked', false);
-  $('#jingles').html('<%= j render(partial: "jingles/item", collection: @jingles) %>');
-  $('.pagination').replaceWith('<%= j paginate(@jingles, remote: true) %>');
+  $('.container').html('<%=j render(template: "jingles/index")%>');
 <% end %>

@@ -18,6 +18,9 @@ gem 'devise', '~>4.2.0'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 gem 'foreman'
 gem 'paperclip', '~> 5.0.0'
+gem 'delayed_paperclip', '~> 3.0.1'
+gem 'aws-sdk', '~> 2'
+gem 'fog-aws', '~> 0.9.3'
 gem 'friendly_id', '~> 5.1.0'
 gem 'rollbar', '~> 2.12.0'
 gem 'icomoon-rails', '~> 0.1.0'
@@ -62,6 +65,7 @@ group :test do
   gem 'pundit-matchers', '~> 1.1.0'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'rspec-its'
 end
 
 source 'https://rails-assets.org' do

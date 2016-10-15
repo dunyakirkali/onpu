@@ -1,5 +1,6 @@
 # JinglePolicy
 class JinglePolicy < ApplicationPolicy
+  # Scope
   class Scope < Scope
     def resolve
       if user.present?

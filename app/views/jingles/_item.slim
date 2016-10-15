@@ -1,21 +1,8 @@
 .jingle
-  = link_to item, class: 'jingle-image' do
-    = image_tag item.image.file.url(:medium)
-  .jingle-header
-    h4 = link_to "#{item.title} by #{item.user ? item.user.email : 'N/A'}", item, class: 'header'
+  .jingle-image style="background-image:url(#{item.image.file.url(:thumb)})"
+  = image_tag item.image.file.url(:thumb), data: { image: item.image.file.url(:medium) }
   .jingle-content
+    .jingle-header
+      h4
+        = link_to item.title, item, class: 'header', remote: true
     span.price = number_to_currency(item.price, unit: item.price_currency)
-  .jingle-footeer
-    nav.actions
-      - if policy(item).buy?
-        = link_to buy_jingle_path(item, page: params[:page]), remote: true do
-          i.right.chevron.icon
-          | Buy
-      - if policy(item).edit?
-        = link_to edit_users_jingle_path(item, page: params[:page]), remote: true do
-          i.right.chevron.icon
-          | Edit
-      - if policy(item).destroy?
-        = link_to users_jingle_path(item, page: params[:page]), method: :delete, remote: true, data: { confirm: 'Are you sure?' } do
-          i.right.chevron.icon
-          | Destroy

@@ -1,0 +1,2 @@
+$('.container').css('background-image', 'url("<%= @jingle.image.file.url %>")');
+$('#header').html('<%= j render(partial: "player", locals: { jingle: @jingle }) %>');
