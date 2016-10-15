@@ -6,4 +6,6 @@ ul.white-text
     li = link_to 'New Jingle', new_users_audio_path, class: 'new_jingle', remote: true
     li 
       span = current_user.email
-    li = link_to 'Logout', destroy_user_session_path, class: 'item', method: :delete
+    li = link_to 'Logout', destroy_user_session_path, method: :delete
+  - else
+    li = link_to 'Login', new_user_session_path
