@@ -14,5 +14,5 @@ class Image < ApplicationRecord
   do_not_validate_attachment_file_type :file
 
   # Processors
-  process_in_background :file
+  process_in_background :file, only_process: [:medium, :thumb]
 end
