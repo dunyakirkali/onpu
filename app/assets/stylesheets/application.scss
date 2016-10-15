@@ -6,73 +6,17 @@
 @import 'animate-css';
 @import 'mixins';
 @import 'sidebar';
-@import 'content';
 @import 'jingles';
 @import 'modal';
 @import 'search_bar';
 @import 'dropzone';
+@import 'footer';
 @import 'coverflow';
 
 $mobile: new-breakpoint(max-width 992px 12);
 
 html, body {
   height: 100%;
-}
-
-#sidebar{
-  @include span-columns(1);
-  @include media($mobile) {
-    @include span-columns(3);
-  }
-  padding:.3em;
-  ul{
-    margin:0;
-    padding:0;
-    li{
-      list-style-type:none;
-    }
-  }
-  position:fixed;
-  ul{
-    li{
-      @include invisible;
-      &:first-child{
-        @include visible;
-      }
-    }
-  }
-  &.visible{
-    max-width:50%;
-    @include span-columns(3);
-    @include media($mobile) {
-      @include span-columns(9);
-    }
-    ul{
-      @include visible;
-      li{
-        @include visible;
-      }
-    }
-  }
-}
-
-.container{
-  @include span-columns(11);
-  @include shift(1);
-  #jingles{
-    .card{
-      @include span-columns(4 of 12);
-      @include omega(3n);
-      @include media($mobile) {
-        @include span-columns(10 of 12);
-        @include shift(1);
-      }
-    }
-  }
-  .pagination{
-    @include outer-container;
-    @include span-columns(10 of 12);
-  }
 }
 
 .black{
