@@ -41,14 +41,14 @@ RSpec.describe 'User', type: :feature, js: true do
     end
 
     describe 'can delete a jingle' do
-      fit 'via content' do
+      it 'via content' do
         first('.destroy-link').trigger('click')
         expect(page).to have_content('Jingle was successfully destroyed.')
       end
     end
 
     describe 'can edit a jingle' do
-      fit 'via content' do
+      it 'via content' do
         first('.edit-link').trigger('click')
         fill_in 'jingle_title', with: jingle.title
         click_on 'Jingle Güncelle'
