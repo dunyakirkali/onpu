@@ -12,7 +12,11 @@ myDropzoneImage = new Dropzone("#new_jingle", {
    });
  },
  success: function(response) {
-   eval(response.xhr.response)
+   $('#new_jingle .upload-progress').hide().find('.bar').css('width', "0%");
+   eval(response.xhr.response);
+ },
+ uploadprogress: function(file, progress) {
+   $('#new_jingle .upload-progress').show().find('.bar').css('width', progress + "%");
  }
 });
 

@@ -17,6 +17,8 @@
   .field
     = f.fields_for :image do |image_f|
       = image_f.label :file, 'Drop image somewhere here'
-
+  .upload-progress
+    .progress
+      .bar style='width: 0%; height: 5px; background: red;'
 
   = f.button :submit, id: 'submit-button'
