@@ -62,4 +62,6 @@ Rails.application.configure do
       s3_region: ENV['FOG_REGION']
     }
   }
+
+  config.react.variant = :production
 end

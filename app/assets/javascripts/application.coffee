@@ -8,3 +8,6 @@
 #= require modal
 #= require dropzone
 #= require jquery-flipster
+#= require react
+#= require react_ujs
+#= require components
