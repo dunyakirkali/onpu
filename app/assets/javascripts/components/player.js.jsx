@@ -57,7 +57,7 @@ var Player = React.createClass({
       <div>
         <div>Title: {this.state.title}</div>
         <audio controls className="player" preload="false">
-          <source src="{this.state.audio}" />
+          <source src={this.state.audio} />
         </audio>
       </div>
     )
