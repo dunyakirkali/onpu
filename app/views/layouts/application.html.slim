@@ -10,8 +10,8 @@ html lang="#{ I18n.locale }"
     meta content="#{dv}" name='viewport'
     = render 'favicon'
 
-  body.background-image style="#{ yield(:body_style) }"
+  body
     #header = render 'player', jingle: nil
-    .container = yield
+    .container.background-image = yield
     #footer = render 'navigation'
     = render 'modals'
