@@ -19,8 +19,15 @@
 
 $mobile: new-breakpoint(max-width 992px 12);
 
-html, body, .container {
-  height: calc(100vh - 56px);
+
+html, body {
+  height: 100%;
+}
+#header {
+  height: 45px;
+}
+.container {
+  height: calc(100vh - 56px - 45px);
 }
 
 img {

@@ -1,0 +1,18 @@
+- if jingle.present?
+  ul
+    li
+      h4 = link_to jingle.title, jingle, remote: true
+    li
+      span.price = number_to_currency(jingle.price, unit: jingle.price_currency)
+    - if policy(jingle).buy?
+      li = link_to buy_jingle_path(jingle, page: params[:page]), remote: true do
+        i.right.chevron.icon
+        | Buy
+    - if policy(jingle).edit?
+      li = link_to edit_users_jingle_path(jingle, page: params[:page]), remote: true do
+        i.right.chevron.icon
+        | Edit
+    - if policy(jingle).destroy?
+      li = link_to users_jingle_path(jingle, page: params[:page]), method: :delete, remote: true, data: { confirm: 'Are you sure?' } do
+        i.right.chevron.icon
+        | Destroy

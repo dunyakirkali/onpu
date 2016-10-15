@@ -11,7 +11,7 @@ html lang="#{ I18n.locale }"
     = render 'favicon'
 
   body.background-image style="#{ yield(:body_style) }"
-    #header = render 'player'
+    #header = render 'player', jingle: nil
     .container = yield
     #footer = render 'navigation'
     = render 'modals'

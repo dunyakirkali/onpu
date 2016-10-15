@@ -10,5 +10,4 @@ $('#error_explanation ul').html('');
   $.notify('Jingle was successfully updated.', 'success');
   $(".modal-state").prop('checked', false);
   $('.container').html('<%= j render(template: "jingles/index") %>');
-  $('.pagination').replaceWith('<%= j paginate(@jingles, remote: true) %>');
 <% end %>

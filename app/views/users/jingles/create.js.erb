@@ -42,5 +42,4 @@ $('#error_explanation ul').html('');
   $.notify('Jingle was successfully created.', 'success');
   $(".modal-state").prop('checked', false);
   $('#jingles').html('<%=j render(partial: "jingles/item", collection: @jingles)%>');
-  $('.pagination').replaceWith('<%= j paginate(@jingles, remote: true) %>');
 <% end %>
