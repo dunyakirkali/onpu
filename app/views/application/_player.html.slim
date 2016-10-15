@@ -22,9 +22,3 @@
       li = link_to users_jingle_path(jingle, page: params[:page]), class: 'destroy-link', method: :delete, remote: true, data: { confirm: 'Are you sure?' } do
         i.right.chevron.icon
         | Destroy
-
-  javascript:
-    jingle = new Jingle({
-      target: '#jingle-player',
-      file: "#{jingle.audio.file.url}"
-    })
