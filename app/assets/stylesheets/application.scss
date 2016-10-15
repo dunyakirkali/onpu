@@ -11,6 +11,7 @@
 @import 'modal';
 @import 'search_bar';
 @import 'dropzone';
+@import 'coverflow';
 
 $mobile: new-breakpoint(max-width 992px 12);
 
@@ -93,4 +94,5 @@ img{ max-width:100%; }
   background-image: image-url('landscape.jpg');
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
 }

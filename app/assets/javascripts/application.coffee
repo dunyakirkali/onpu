@@ -8,6 +8,7 @@
 #= require sidebar
 #= require modal
 #= require dropzone
+#= require coverflow
 
 $ ->
   new Sidebar()
