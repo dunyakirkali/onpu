@@ -4,6 +4,12 @@
       h4 = link_to jingle.title, jingle, remote: true
     li
       span.price = number_to_currency(jingle.price, unit: jingle.price_currency)
+    li
+      #jingle-player.cp-jplayer
+      #jp_container_1.jp-audio aria-label='media player' role='application'
+        .jp-controls
+          .icon-play3
+          .icon-pause2.hidden
     - if policy(jingle).buy?
       li = link_to buy_jingle_path(jingle, page: params[:page]), remote: true do
         i.right.chevron.icon
@@ -16,3 +22,9 @@
       li = link_to users_jingle_path(jingle, page: params[:page]), method: :delete, remote: true, data: { confirm: 'Are you sure?' } do
         i.right.chevron.icon
         | Destroy
+
+  javascript:
+    jingle = new Jingle({
+      target: '#jingle-player',
+      file: "#{jingle.audio.file.url}"
+    })

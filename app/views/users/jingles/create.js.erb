@@ -41,5 +41,5 @@ $('#error_explanation ul').html('');
 <% else %>
   $.notify('Jingle was successfully created.', 'success');
   $(".modal-state").prop('checked', false);
-  $('#jingles').html('<%=j render(partial: "jingles/item", collection: @jingles)%>');
+  $('.container').html('<%=j render(template: "jingles/index")%>');
 <% end %>
