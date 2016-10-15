@@ -27,6 +27,8 @@ myDropzoneImage = new Dropzone(element, {
 });
 
 $(element).on('submit', function(){
-  myDropzoneImage.processQueue();
-  return false;
+  if(myDropzoneNST.files.length > 0){
+    myDropzoneImage.processQueue();
+    return false;
+  }
 });
