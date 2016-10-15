@@ -41,7 +41,7 @@ module Users
     private
 
     def set_jingles
-      @jingles = Jingle.includes(:user).page(params[:page])
+      @jingles = Jingle.includes(:user)
     end
 
     def set_jingle
