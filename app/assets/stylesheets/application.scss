@@ -13,6 +13,9 @@
 @import 'coverflow';
 @import 'shelf';
 
+// Settings
+@import 'settings/colors.scss';
+
 $mobile: new-breakpoint(max-width 992px 12);
 
 html, body, .container {
