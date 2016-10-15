@@ -33,8 +33,10 @@ $('#error_explanation ul').html('');
   });
 
   $(element).on('submit', function(){
-    myDropzoneImage.processQueue();
-    return false;
+    if(myDropzoneImage.files.length > 0){
+      myDropzoneImage.processQueue();
+      return false;
+    }
   });
 <% else %>
   $.notify('Jingle was successfully created.', 'success');
