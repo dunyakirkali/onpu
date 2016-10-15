@@ -27,7 +27,7 @@ myDropzoneImage = new Dropzone(element, {
 });
 
 $(element).on('submit', function(){
-  if(myDropzoneNST.files.length > 0){
+  if(myDropzoneImage.files.length > 0){
     myDropzoneImage.processQueue();
     return false;
   }
