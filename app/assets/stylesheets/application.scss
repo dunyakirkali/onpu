@@ -16,7 +16,7 @@
 $mobile: new-breakpoint(max-width 992px 12);
 
 html, body, .container {
-  height: calc(100% - 56px);
+  height: calc(100% - 1.5em);
 }
 
 .black{
