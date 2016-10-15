@@ -16,18 +16,18 @@
 $mobile: new-breakpoint(max-width 992px 12);
 
 html, body, .container {
-  height: calc(100% - 1.5em);
+  height: calc(100vh - 56px);
 }
 
-.black{
-  background-color:black;
+img {
+  max-width:100%;
 }
 
-.white-text{ color: white; }
+.hide {
+  display: none;
+}
 
-img{ max-width:100%; }
-.hide{ display: none; }
-.dz-clickable{
+.dz-clickable {
   .dz-error-mark,
   .dz-success-mark{
     display:none;

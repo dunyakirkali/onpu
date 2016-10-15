@@ -1,8 +1,10 @@
+$footer-height: 56px;
+
 #footer {
   position:fixed;
   left: 0px;
   bottom: 0px;
-  height: 56px;
+  height: $footer-height;
   width: 100%;
   background: #999;
 
