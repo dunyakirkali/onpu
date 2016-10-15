@@ -1,3 +1,9 @@
-#jingles.jingles
-  = render partial: 'jingles/item', collection: @jingles
-= paginate @jingles, remote: true
+#jingles.jingles.shelf
+  ul.flip-items
+    = render partial: 'jingles/item', collection: @jingles
+
+javascript:
+  $("#jingles").flipster({
+    style: 'flat',
+    spacing: -0.25
+  });

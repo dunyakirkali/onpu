@@ -8,7 +8,9 @@ RSpec.describe 'Guest', type: :feature, js: true do
   end
 
   it 'can view a jingle' do
-    click_on jingle.title
+    within '.jingle-header' do
+      first('a').trigger('click')
+    end
     expect(page).to have_css('#jingle-player')
   end
 end

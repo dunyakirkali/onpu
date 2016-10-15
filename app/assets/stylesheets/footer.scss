@@ -1,0 +1,40 @@
+$footer-height: 56px;
+
+#footer {
+  position:fixed;
+  left: 0px;
+  bottom: 0px;
+  height: $footer-height;
+  width: 100%;
+  background: $blue;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: $blue;
+  }
+
+  li {
+    float: left;
+  }
+
+  li {
+    a, span {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      text-decoration: none;
+    }
+    form {
+      color: black;
+      margin-top: 10px;
+    }
+  }
+
+  li a:hover {
+    background-color: #111111;
+  }
+}

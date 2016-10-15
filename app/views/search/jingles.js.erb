@@ -1,2 +1,1 @@
-$('#jingles').html('<%= j render(partial: "jingles/item", collection: @jingles) %>');
-$('.pagination').replaceWith('<%= j paginate(@jingles, remote: true) %>');
+$('.container').html('<%= j render(template: "jingles/index") %>');

@@ -5,79 +5,53 @@
 @import 'icomoon';
 @import 'animate-css';
 @import 'mixins';
-@import 'sidebar';
-@import 'content';
+
+// Settings
+@import 'settings/colors.scss';
+
 @import 'jingles';
 @import 'modal';
 @import 'search_bar';
 @import 'dropzone';
+@import 'footer';
+@import 'shelf';
+@import 'jquery-flipster';
 
 $mobile: new-breakpoint(max-width 992px 12);
+
+$player-height: 170px;
 
 html, body {
   height: 100%;
 }
+#header{
+  background-color: $yellow;
+}
+#header {
+  height: $player-height;
+}
+.container {
+  height: calc(100vh - 56px - 170px);
+}
 
-#sidebar{
-  @include span-columns(1);
-  @include media($mobile) {
-    @include span-columns(3);
-  }
-  padding:.3em;
-  ul{
-    margin:0;
-    padding:0;
-    li{
-      list-style-type:none;
-    }
-  }
-  position:fixed;
-  ul{
-    li{
-      @include invisible;
-      &:first-child{
-        @include visible;
-      }
-    }
-  }
-  &.visible{
-    @include span-columns(3);
-    @include media($mobile) {
-      @include span-columns(9);
-    }
-    ul{
-      @include visible;
-      li{
-        @include visible;
-      }
-    }
+img {
+  max-width:100%;
+}
+
+.hide {
+  display: none;
+}
+
+.dz-clickable {
+  .dz-error-mark,
+  .dz-success-mark{
+    display:none;
   }
 }
 
-.container{
-  @include span-columns(11);
-  @include shift(1);
-  #jingles{
-    .card{
-      @include span-columns(4 of 12);
-      @include omega(3n);
-      @include media($mobile) {
-        @include span-columns(10 of 12);
-        @include shift(1);
-      }
-    }
-  }
-  .pagination{
-    @include outer-container;
-    @include span-columns(10 of 12);
-  }
+.background-image {
+  background-image: image-url('landscape.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.black{
-  background-color:black;
-}
-
-.white-text{ color: white; }
-
-img{ max-width:100%; }
-.hide{ display: none; }

@@ -8,14 +8,4 @@
     @include flex-grow(1);
     margin: 0 1em;
   }
-
-  .jingle-image {
-    height: 15em;
-    background: whitesmoke;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-    }
-  }
 }
