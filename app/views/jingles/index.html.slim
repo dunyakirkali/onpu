@@ -1,5 +1,6 @@
 #jingles.jingles.shelf
-  = render partial: 'jingles/item', collection: @jingles
+  ul.flip-items
+    = render partial: 'jingles/item', collection: @jingles
 
 javascript:
   $('#jingles').coverflow({
