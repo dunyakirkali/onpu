@@ -4,7 +4,6 @@
 = form_for [:users, @jingle], url: @jingle.new_record? ? users_jingles_path(page: params[:page]) : users_jingle_path(@jingle, page: params[:page]), html: { multipart: true }, remote: true do |f|
   - if params[:jingle].present? && params[:jingle][:audio_id].present?
     = f.hidden_field :audio_id, value: params[:jingle][:audio_id]
-  = params[:jingle].inspect
   #error_explanation
   .field
     = f.label :title
