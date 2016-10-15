@@ -15,6 +15,7 @@ RSpec.describe 'User', type: :feature, js: true do
 
       it 'via sidebar' do
         click_on 'New Jingle'
+        sleep 0.5
         show_dropzone_field 'audio_file'
         attach_file 'audio_file', Rails.root.join('spec/fixtures/audio.mp3')
         fill_in 'jingle_title', with: jingle.title
