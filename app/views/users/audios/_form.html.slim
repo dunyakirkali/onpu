@@ -1,6 +1,6 @@
 .header
   h3 = "#{@audio.persisted? ? 'Edit' : 'New'} audio"
 
-= form_for [:users, @audio], html: { multipart: true, style: 'height:100px;', class: 'dropzone' }, remote: true, format: :js do |f|
+= form_for [:users, @audio], html: { multipart: true, style: 'height:100px;' }, remote: true, format: :js do |f|
   | Drop files here
 
