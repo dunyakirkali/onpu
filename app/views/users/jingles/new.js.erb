@@ -3,6 +3,7 @@ $(".modal-state").prop('checked', true);
 
 myDropzoneImage = new Dropzone("#new_jingle", {
  paramName: 'jingle[image_attributes][file]',
+ acceptedFiles: 'image/*',
  autoProcessQueue: false,
  init: function() {
    this.on('sending', function(file, xhr, formData) {
@@ -17,6 +18,9 @@ myDropzoneImage = new Dropzone("#new_jingle", {
  },
  uploadprogress: function(file, progress) {
    $('#new_jingle .upload-progress').show().find('.bar').css('width', progress + "%");
+ },
+ drop: function() {
+   return $('.dz-complete .dz-error-message').html('');
  }
 });
 

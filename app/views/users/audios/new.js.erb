@@ -4,6 +4,7 @@ myDropzoneAudio = new Dropzone("#audio-upload", {
   url: $("#audio-upload").parents('form').attr('action'),
   method: 'post',
   paramName: 'audio[file]',
+  acceptedFiles: 'audio/*',
   headers: {
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
   },
