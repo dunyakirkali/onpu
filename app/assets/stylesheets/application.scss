@@ -82,3 +82,9 @@ html, body {
 
 img{ max-width:100%; }
 .hide{ display: none; }
+.dz-clickable{
+  .dz-error-mark,
+  .dz-success-mark{
+    display:none;
+  }
+}
