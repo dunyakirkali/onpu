@@ -20,14 +20,16 @@
 $mobile: new-breakpoint(max-width 992px 12);
 
 
+$player-height: 170px;
+
 html, body {
   height: 100%;
 }
 #header {
-  height: 45px;
+  height: $player-height;
 }
 .container {
-  height: calc(100vh - 56px - 45px);
+  height: calc(100vh - 56px - 170px);
 }
 
 img {

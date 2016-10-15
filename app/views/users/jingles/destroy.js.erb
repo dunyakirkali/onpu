@@ -1,2 +1,3 @@
 $.notify('Jingle was successfully destroyed.', 'success');
 $('.container').html('<%= j render(template: "jingles/index") %>');
+$('#header').html('<%= j render(partial: "player", locals: { jingle: nil }) %>');
