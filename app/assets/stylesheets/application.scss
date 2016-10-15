@@ -88,3 +88,9 @@ img{ max-width:100%; }
     display:none;
   }
 }
+
+.background-image {
+  background-image: image-url('landscape.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
