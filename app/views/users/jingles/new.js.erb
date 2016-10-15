@@ -20,6 +20,7 @@ myDropzoneImage = new Dropzone("#new_jingle", {
  }
 });
 
-$('#submit-button').click(function(e){
+$('#new_jingle').on('submit', function(){
   myDropzoneImage.processQueue();
+  return false;
 });
