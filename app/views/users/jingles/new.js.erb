@@ -6,6 +6,7 @@ myDropzoneImage = new Dropzone(element, {
   paramName: 'jingle[image_attributes][file]',
   acceptedFiles: 'image/*',
   autoProcessQueue: false,
+  addRemoveLinks: true,
   maxFiles: 1,
   init: function() {
     this.on('sending', function(file, xhr, formData) {
