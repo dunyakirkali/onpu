@@ -2,7 +2,7 @@
 class Audio < ApplicationRecord
   # Includes
   include Disposable
-  
+
   # Relations
   has_attached_file :file
   has_one :jingle

@@ -1,3 +1,4 @@
+# Disposable
 module Disposable
   extend ActiveSupport::Concern
 
