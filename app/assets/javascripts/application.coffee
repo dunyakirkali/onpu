@@ -8,3 +8,4 @@
 #= require modal
 #= require dropzone
 #= require coverflow
+#= require jquery-flipster
