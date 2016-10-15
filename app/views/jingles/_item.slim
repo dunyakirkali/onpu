@@ -3,5 +3,11 @@
   .jingle-content
     .jingle-header
       h4
-        = link_to item.title, item, class: 'header', remote: true
+        = link_to item.title, item, class: 'header'
     span.price = number_to_currency(item.price, unit: item.price_currency)
+
+javascript:
+  $('a.header').on('click', function(e) {
+    e.preventDefault();
+    PubSub.publish('SELECT', { title: 'dunya', audio: 'test' });
+  });

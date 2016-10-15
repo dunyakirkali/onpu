@@ -1,8 +1,17 @@
 var Player = React.createClass({
-  propTypes: {
-    title: React.PropTypes.string,
-    audio: React.PropTypes.string,
-    price: React.PropTypes.string
+  getInitialState: function() {
+    return {
+      title: '',
+      audio: '',
+      price: ''
+    };
+  },
+
+  componentWillMount: function() {
+    var that = this;
+    PubSub.subscribe('SELECT', function(channel, data) {
+      that.setState(data);
+    });
   },
 
   getPlaybackTime: function(time) {
@@ -46,9 +55,9 @@ var Player = React.createClass({
   render: function() {
     return (
       <div>
-        <div>Title: {this.props.title}</div>
+        <div>Title: {this.state.title}</div>
         <audio controls className="player" preload="false">
-          <source src="{this.props.audio}" />
+          <source src="{this.state.audio}" />
         </audio>
       </div>
     )
