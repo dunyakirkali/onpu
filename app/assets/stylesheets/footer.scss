@@ -6,14 +6,14 @@ $footer-height: 56px;
   bottom: 0px;
   height: $footer-height;
   width: 100%;
-  background: #999;
+  background: $brown;
 
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;
+    background: $brown;
   }
 
   li {

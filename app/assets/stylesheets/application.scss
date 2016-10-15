@@ -5,6 +5,10 @@
 @import 'icomoon';
 @import 'animate-css';
 @import 'mixins';
+
+// Settings
+@import 'settings/colors.scss';
+
 @import 'jingles';
 @import 'modal';
 @import 'search_bar';
@@ -12,9 +16,6 @@
 @import 'footer';
 @import 'coverflow';
 @import 'shelf';
-
-// Settings
-@import 'settings/colors.scss';
 
 $mobile: new-breakpoint(max-width 992px 12);
 
