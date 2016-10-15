@@ -1,4 +1,10 @@
 .jingle
   = image_tag item.image.file.url(:thumb), data: { image: item.image.file.url(:medium) }, class: 'jingle-image'
-  .jingle-header
-    h4 = link_to item.title, item, class: 'header', remote: true
+  .jingle-content
+    .jingle-header
+      h4
+        = link_to item, class: 'header', remote: true do
+          = "#{item.title}"
+          br
+          = "by #{item.user ? item.user.email : 'N/A'}"
+    span.price = number_to_currency(item.price, unit: item.price_currency)
