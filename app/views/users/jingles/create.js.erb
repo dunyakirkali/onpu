@@ -1,0 +1,14 @@
+$('#error_explanation ul').html('');
+<% if @jingle.errors.any? %>
+  $('.modal-content').html('<%=j render "form" %>');
+  $('.modal-content').find('#error_explanation').html($('<ul>'));
+  <% @jingle.errors.full_messages.each do |message|  %>
+    $('#error_explanation ul').append('<li><%=message%></li>');
+  <% end %>
+  $(".modal-state").prop('checked', true);
+<% else %>
+  $.notify('Jingle was successfully created.', 'success');
+  $(".modal-state").prop('checked', false);
+  $('#jingles').html('<%=j render(partial: "jingles/item", collection: @jingles)%>');
+  $('.pagination').replaceWith('<%= j paginate(@jingles, remote: true) %>');
+<% end %>
