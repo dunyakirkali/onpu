@@ -3,7 +3,7 @@ li.jingle
   .jingle-content
     .jingle-header
       h4
-        = link_to item.title, item, class: 'header', data: { title: item.title, audio: item.audio.file }
+        = link_to item.title, item, class: 'header', data: { title: item.title, audio: item.audio.file.url }
     span.price = number_to_currency(item.price, unit: item.price_currency)
 
 javascript:
