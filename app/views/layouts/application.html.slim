@@ -10,7 +10,7 @@ html lang="#{ I18n.locale }"
     meta content="#{dv}" name='viewport'
     = render 'favicon'
 
-  body.background-image
+  body.background-image style="#{ yield(:body_style) }"
     .container
       = yield
     #footer = render 'sidebar'

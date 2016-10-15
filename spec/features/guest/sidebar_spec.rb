@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Guest', type: :feature, js: true do
+RSpec.describe 'Guest', type: :feature, js: true, skip: true do
   before :each do
     visit root_path
   end
