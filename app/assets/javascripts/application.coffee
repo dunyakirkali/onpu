@@ -4,7 +4,6 @@
 #= require howler
 #= require jplayer
 #= require notifyjs
-#= require jingle
 #= require modal
 #= require dropzone
 #= require jquery-flipster
