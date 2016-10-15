@@ -12,4 +12,7 @@ class Image < ApplicationRecord
   validates_attachment_content_type :file, content_type: /\Aimage/
   validates_attachment_file_name :file, matches: [/png\z/, /jpe?g\z/]
   do_not_validate_attachment_file_type :file
+
+  # Processors
+  process_in_background :file
 end
