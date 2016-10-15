@@ -3,6 +3,7 @@ $(".modal-state").prop('checked', true);
 myDropzoneAudio = new Dropzone("#new_audio", {
   paramName: 'audio[file]',
   acceptedFiles: 'audio/*',
+  maxFiles: 1,
   headers: {
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
   },
