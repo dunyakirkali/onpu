@@ -3,9 +3,4 @@
     = render partial: 'jingles/item', collection: @jingles
 
 javascript:
-  $('#jingles').coverflow({
-    select: function(event, ui){
-      // var image = $(event.target).find('.ui-state-active').find('img').data('image');
-      // $('.container').css('background-image', 'url(' + image + ')');
-    }
-  });
+  $("#jingles").flipster();
