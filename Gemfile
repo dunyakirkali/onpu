@@ -64,6 +64,7 @@ group :test do
   gem 'pundit-matchers', '~> 1.1.0'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'rspec-its'
 end
 
 source 'https://rails-assets.org' do
