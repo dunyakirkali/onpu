@@ -291,6 +291,7 @@ GEM
     rails-assets-jplayer (2.9.2)
       rails-assets-jquery (>= 1.7.2)
     rails-assets-jquery (3.1.1)
+    rails-assets-jquery-flipster (1.1.2)
     rails-assets-normalize-scss (3.0.3)
     rails-assets-notifyjs (0.4.2)
     rails-assets-pubsub-js (1.5.3)
@@ -478,6 +479,7 @@ DEPENDENCIES
   rails-assets-dropzone!
   rails-assets-howler!
   rails-assets-jplayer!
+  rails-assets-jquery-flipster!
   rails-assets-normalize-scss!
   rails-assets-notifyjs!
   rails-assets-pubsub-js!
