@@ -2,7 +2,9 @@
   p
     = image_tag jingle.image.file.url
     br
-    = "#{jingle.title} by #{jingle.user.email}"
+    = "#{jingle.title}"
+    br
+    = "by #{jingle.user.email}"
 
   #jingle-player.cp-jplayer
   #jp_container_1.jp-audio aria-label='media player' role='application'
