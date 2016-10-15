@@ -4,7 +4,7 @@
 = form_for [:users, @jingle], url: @jingle.new_record? ? users_jingles_path(page: params[:page]) : users_jingle_path(@jingle, page: params[:page]), html: { multipart: true }, remote: true do |f|
   - if params[:jingle].present? && params[:jingle][:audio_id].present?
     = f.hidden_field :audio_id, value: params[:jingle][:audio_id]
-  
+  = params[:jingle].inspect
   #error_explanation
   .field
     = f.label :title
@@ -14,10 +14,10 @@
     = f.label :price
     = currency_symbol
     = f.text_field :price
-  
+
   .field
     = f.fields_for :image do |image_f|
-      = image_f.label :file
-      = image_f.file_field :file
-      
-  = f.submit
+      = image_f.label :file, 'Drop image somewhere here'
+
+
+  = f.button :submit, id: 'submit-button'
