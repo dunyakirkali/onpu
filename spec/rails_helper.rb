@@ -31,6 +31,7 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include AbstractController::Translation
+  config.include Dropzone
 
   config.extend ControllerMacros, type: :controller
 
