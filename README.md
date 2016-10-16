@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/Ruby-2.3.1-green.svg)
 ![](https://img.shields.io/badge/Rails-5.0.0.1-green.svg)
-[![Circle CI](https://circleci.com/gh/ahtung/onpu/tree/master.svg?style=shield&circle-token=395a9cc061c0ca14015d4da44de6e3f25561e373)](https://circleci.com/gh/ahtung/onpu/tree/master)
+[![CircleCI](https://circleci.com/gh/ahtung/onpu/tree/master.svg?style=svg)](https://circleci.com/gh/ahtung/onpu/tree/master)
 [![Coverage Status](https://coveralls.io/repos/github/ahtung/onpu/badge.svg?branch=master&t=tNbv72)](https://coveralls.io/github/ahtung/onpu?branch=master)
 
 ## Tech
